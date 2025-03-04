@@ -20,15 +20,39 @@ const swiper1 = new Swiper('.swiper1', {
         clickable: true,
     },
 });
-const swiper2 = new Swiper('.swiper2', {
-    loop: true,
-    speed: 500,
-})
 
-
-
-
-
+// game-list1을 위한 새로운 Swiper 인스턴스 생성
+const swiper2 = new Swiper('.game-list1', {
+    loop: false,
+    slidesPerView: 1, // 기본값: 한 번에 4개의 슬라이드 표시
+    spaceBetween: 15, // 슬라이드 간 간격
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+        // 화면 너비가 320px 이상일 때
+        500: {
+            slidesPerView: 2, // 한 번에 2개의 슬라이드 표시
+            spaceBetween: 10, // 슬라이드 간 간격 조정
+        },
+        // 화면 너비가 480px 이상일 때
+        750: {
+            slidesPerView: 3, // 한 번에 3개의 슬라이드 표시
+            spaceBetween: 10, // 슬라이드 간 간격 조정
+        },
+        // 화면 너비가 768px 이상일 때
+        1000: {
+            slidesPerView: 3, // 한 번에 4개의 슬라이드 표시
+            spaceBetween: 15, // 슬라이드 간 간격 조정
+        },
+        // 화면 너비가 1024px 이상일 때
+        1024: {
+            slidesPerView: 4, // 한 번에 5개의 슬라이드 표시
+            spaceBetween: 15, // 슬라이드 간 간격 조정
+        },
+    },
+});
 document.addEventListener("touchmove", function(event) {
     if (event.touches.length > 1 || event.changedTouches[0].clientX !== 0) {
         event.preventDefault();

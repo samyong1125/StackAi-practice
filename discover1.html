@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="css/discover1Css.css"/>
     <!-- Flickity CSS -->
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-
 </head>
 <body>
 <!-- Slider main container -->
@@ -74,57 +73,96 @@
     <!-- If we need pagination -->
     <div class="swiper-pagination"></div>
 </div>
-<section class="game-list1 swiper-container swiper2">
-    <a href="#">
-        <div class="game-item">
-            <img src="resources/spiderman.avif" alt="스파이더맨2">
-            <p>마블 스파이더맨2</p>
-            <span>게임가격</span>
+
+<!-- game-list1을 스와이퍼 캐러셀로 변경 -->
+<div class="swiper-container game-list1">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <a href="#">
+                <div class="game-item">
+                    <img src="resources/spiderman.avif" alt="스파이더맨2">
+                    <p>마블 스파이더맨2</p>
+                    <span>게임가격</span>
+                </div>
+            </a>
         </div>
-    </a>
-    <a href="#">
-        <div class="game-item swiper-slide2">
-            <img src="resources/kingdomecome.avif" alt="킹덤컴">
-            <p>킹덤 컴:딜리버런스 2</p>
-            <span>게임가격</span>
+        <div class="swiper-slide">
+            <a href="#">
+                <div class="game-item">
+                    <img src="resources/kingdomecome.avif" alt="킹덤컴">
+                    <p>킹덤 컴:딜리버런스 2</p>
+                    <span>게임가격</span>
+                </div>
+            </a>
         </div>
-    </a>
-    <a href="#">
-        <div class="game-item">
-            <img src="resources/maddenNfl25.avif" alt="NFL25">
-            <p>Maddeen NFL 25</p>
-            <span>게임가격</span>
+        <div class="swiper-slide">
+            <a href="#">
+                <div class="game-item">
+                    <img src="resources/maddenNfl25.avif" alt="NFL25">
+                    <p>Maddeen NFL 25</p>
+                    <span>게임가격</span>
+                </div>
+            </a>
         </div>
-    </a>
-    <a href="#">
-        <div class="game-item">
-            <img src="resources/civilization7.avif" alt="문명 7">
-            <p>문명 7</p>
-            <span>게임가격</span>
+        <div class="swiper-slide">
+            <a href="#">
+                <div class="game-item">
+                    <img src="resources/civilization7.avif" alt="문명 7">
+                    <p>문명 7</p>
+                    <span>게임가격</span>
+                </div>
+            </a>
         </div>
-    </a>
-    <a href="#">
-        <div class="game-item">
-            <img src="resources/farcry6.webp" alt="파크라이6">
-            <p>파 크라이6</p>
-            <span>게임가격</span>
+        <div class="swiper-slide">
+            <a href="#">
+                <div class="game-item">
+                    <img src="resources/farcry6.webp" alt="파크라이6">
+                    <p>파 크라이6</p>
+                    <span>게임가격</span>
+                </div>
+            </a>
         </div>
-    </a>
-    <a href="#">
-        <div class="game-item">
-            <img src="resources/civilization7.avif" alt="문명 7">
-            <p>문명 7</p>
-            <span>게임가격</span>
+        <div class="swiper-slide">
+            <a href="#">
+                <div class="game-item">
+                    <img src="resources/civilization7.avif" alt="문명 7">
+                    <p>문명 7</p>
+                    <span>게임가격</span>
+                </div>
+            </a>
         </div>
-    </a>
-    <a href="#">
-        <div class="game-item">
-            <img src="resources/civilization7.avif" alt="문명 7">
-            <p>문명 7</p>
-            <span>게임가격</span>
+        <div class="swiper-slide">
+            <a href="#">
+                <div class="game-item">
+                    <img src="resources/civilization7.avif" alt="문명 7">
+                    <p>문명 7</p>
+                    <span>게임가격</span>
+                </div>
+            </a>
         </div>
-    </a>
-</section>
+        <div class="swiper-slide">
+            <a href="#">
+                <div class="game-item">
+                    <img src="resources/farcry6.webp" alt="파크라이6">
+                    <p>파 크라이6</p>
+                    <span>게임가격</span>
+                </div>
+            </a>
+        </div>
+        <div class="swiper-slide">
+            <a href="#">
+                <div class="game-item">
+                    <img src="resources/farcry6.webp" alt="파크라이6">
+                    <p>파 크라이6</p>
+                    <span>게임가격</span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- 네비게이션 버튼 추가 -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <!-- Flickity JS -->

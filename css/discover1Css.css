@@ -89,32 +89,34 @@ body {
     transform: translateY(-2px);
 }
 
+/* game-list1을 스와이퍼 캐러셀로 변경 */
 .game-list1 {
     width: 80%; /* 스와이퍼와 동일한 너비 */
     margin: 20px auto; /* 상하 여백 추가 */
-    /* 기존 스타일 유지 */
+    overflow: hidden;
+    position: relative;
+}
+
+.game-list1 .swiper-wrapper {
     display: flex;
-    gap: 15px;
-    overflow-x: hidden;
-    padding: 20px;
-    scroll-behavior: smooth;
-    max-width: 1300px;
 }
-.game-list1 a {
-    color: white;
-    text-decoration: none;
-}
+
 .game-item {
     flex: 0 0 auto;
-    width: 200px; /* 고정 너비 유지 */
+    width: 180px; /* 고정 너비 유지 */
     background-color: #1E1E1E;
     padding: 10px;
     border-radius: 20px;
     text-align: center;
     transition: transform 0.4s cubic-bezier(0.25, 0.45, 0.45, 1),
     box-shadow 0.4s ease;
-    overflow: hidden;
     will-change: transform, box-shadow;
+    color: white;
+    text-decoration: none;
+}
+
+.game-item a {
+    text-decoration: none;
 }
 
 .game-item:hover {
@@ -134,4 +136,32 @@ body {
 
 .game-item span {
     color: #bbb;
+}
+
+/* 네비게이션 버튼 스타일 */
+.swiper-button-next, .swiper-button-prev {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 20px;
+    width: 40px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    top: 60%; /* 기존 50%에서 40%로 조정 */
+    transform: translateY(-50%); /* 세로 중앙 정렬 유지 */
+}
+
+.swiper-button-next {
+    right: 0; /* 오른쪽 버튼 위치 조정 */
+}
+
+.swiper-button-prev {
+    left: 0; /* 왼쪽 버튼 위치 조정 */
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    background-color: rgba(255, 255, 255, 0.5);
 }
