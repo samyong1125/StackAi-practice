@@ -7,26 +7,16 @@ body {
     padding: 0;
 }
 
-
-.game-title {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.game-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    padding: 20px;
-    justify-content: center;
-    overflow-x: auto;
-}
 .game-item {
     width: 200px;
     background-color: #1E1E1E;
     padding: 10px;
     border-radius: 10px;
     text-align: center;
+    transition: transform 0.4s cubic-bezier(0.25, 0.45, 0.45, 1),
+    box-shadow 0.4s ease;
+    overflow: hidden;
+    will-change: transform, box-shadow;
 }
 .game-item img {
     width: 100%;
@@ -40,33 +30,168 @@ body {
     color: #bbb;
 }
 
-.game-name {
-    width: 200px;
-    background-color: #1E1E1E;
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
-}
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #1a1a1a;
+.game-item:hover {
+    transform: scale(1.07) translateZ(0);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
 }
 
+/*구현중...........................*/
+/*태그 일괄 설정*/
+button{
+
+    margin: 0;
+    border: 0;
+    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
+    white-space: normal;
+    background: none;
+    font-display: swap;
+
+}
+
+
+a{
+    text-decoration-line: none;
+    color: white;
+}
+
+
+img, svg {
+    user-select: none;
+    pointer-events: none;
+}
 
 
 /*구현중...........................*/
-.borwse_wrap{
-    position: absolute;
-    
-    left: 10%;
-    right:10%;
+.browse_wrap{
+    margin: 50px auto;
+    width: 75%;
+    max-width: 1600px;
+    padding-bottom: 90px;
+}
+
+.browse-top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.browse-top-title{
+    padding-left: 20px;
+    font-size: 24px;
+    font-weight: bold;
+
+}
+
+.slide_btns {
+    display: flex;
+    flex-direction: row;
+}
+
+.slide_btns_flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.slide_btns_margin{
+    margin-left: 15px;
+}
+
+.slide_btns_design {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: inherit;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 50%;
 }
 
 
+.slide_btns_design::before {
+    content: '';
+   
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.15);
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+
+    left: 0;
+    top: 0;
+    border: 1px solid transparent;
+    pointer-events: none;
+}
+
+
+.slide_btns_design>span {
+    z-index: 1;
+}
+
+.slide_btns_left {
+    display: block;
+    line-height: 0;
+    width: 12px;
+    height: 12px;
+    transform: rotateY(180deg);
+}
+
+.slide_btns_size {
+    width: 100%;
+    height: 100%;
+}
+
+.slide_btns_right {
+    display: block;
+    line-height: 0;
+    width: 12px;
+    height: 12px;
+    transform: rotateY(0deg);
+}
+
+/*discover.css에서 가져옴*/
+.game-list1 {
+    display: flex;
+    gap: 15px;
+    overflow-x: hidden; /* 스크롤바 숨기기 */
+    padding: 20px;
+    scroll-behavior: smooth; /* 부드러운 스크롤 */
+    margin: 0 auto; /* 가로 중앙 정렬 */
+    max-width: 1300px; /* 최대 너비 설정 */
+}
+
+.game-item {
+    flex: 0 0 auto;
+    width: 200px; /* 고정 너비 유지 */
+    background-color: #1E1E1E;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: center;
+    transition: transform 0.4s cubic-bezier(0.25, 0.45, 0.45, 1),
+    box-shadow 0.4s ease;
+    overflow: hidden;
+    will-change: transform, box-shadow;
+}
+
+/**************************************************************************/
+
+
+
+
+/******************************************************************************/
 .browse_main{
     display: flex;
     flex-direction: row-reverse;/*순서 반대로*/
+    align-items: flex-start;
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -74,26 +199,35 @@ footer {
     line-height: normal;
     justify-content: left;
     border: solid 1px transparent;
+    margin-top: 40px;
     margin-bottom: 0;
-    padding: 0;
+    flex-shrink: 0;
+    padding: 0; 
+    font-size: 1rem;
+    line-height: normal;
 }
 
 .browse_fillter{
-    margin-right: 20px;
-    width: 250px;
+    
+    width: 225px;
+    flex-shrink: 0;
+    background-color: #1E1E1E;
+    padding: 15px;
+    border-radius: 10px;
 }
 
-.fillter_reset{
+
+.fillter_top{
     display: flex;
     justify-content: space-between;
 }
 
-.fillter_reset .fillter_reset_title{
+.fillter_top .fillter_top_title{
   font-size: 20px;  
 }
 
-.fillter_reset #fillter_reset_btn{
-
+.fillter_top #fillter_reset_btn{
+    display: none;
     margin: 0;
     border: 0;
     padding: 0;
@@ -149,10 +283,7 @@ footer {
 
     outline: 0;
 }
-/* 
-.fillter_input:not(:focus) {
-    border-color: rgba(255, 0, 0, 0);
-} */
+
 
 .fillter_item{
     margin-top: 20px;
@@ -161,64 +292,80 @@ footer {
     cursor: pointer;
 }
 
-/* button{
-    margin: 0;
-    border: 0;
-    padding: 0;
-    display: inline-block;
-    vertical-align: middle;
-    white-space: normal;
-    background: none;
-    
-    color : white;
-    
-} */
-
 .fillter_btn{
     color :white;
-    font-size: 15px;
-    
+    font-size: 15px;    
     text-align: left;
     cursor: pointer;
 
     margin: 0;
     border: 0;
-    padding: 0;
-    display: inline-block;
-    vertical-align: middle;
+    padding: 12px;
+    /* display: inline-block;
+    vertical-align: middle; */
     white-space: normal;
     background: none;
     width: 100%;
-    color : white;
+
+    display: flex;
+    justify-content: space-between;
 
 }
-
 
 .fillter_item_child{
-    margin-top: 30px;
-    display: none;
-    
+    margin-top: 2px;
 }
 
-.fillter_item_child div{
-   
-    padding: 10px 5px;
-    margin: 5px 5px;
+.fillter_select{
+    display: flex;
+    padding:12px; 
+    
     width: 100%;
     cursor: pointer;
-    border-radius: 10px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    pointer-events: all;
     
 }
 
-.fillter_item_child div:hover{
+.fillter_select:hover{
+    
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.267);;
+    background-color: rgba(255, 255, 255, 0.267);
     
 }
+
+.fillter_select_event{
+    
+    background-color: rgba(255, 255, 255, 0.267);
+}
+
+.fillter_select_arrow{
+    width: 15px;
+    height: 10px;
+}
+
+.arrow{
+    
+    fill: white;
+}
+
+.hide_menu{
+    display: none;
+}
+
+.show_menu{
+    display: block;
+}
+
+
 
 
 /*content box 구현*/
 .browse_section{
+    
     float: left;
     width: calc(100% - 245px);
     padding-right: 15px;
@@ -227,10 +374,26 @@ footer {
 
 
 .browse_section_fillter{
-    margin-left: 15px;
+    display: flex;
+    padding-left: 20px;
+    
 }
 
+/*게임 리스트를 보여주는 화면*/
 /*width 800px*/
+
+.browse_list_section{
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px;
+    justify-content:left;
+    overflow-x: auto;
+}
+
+
+
 .browse-list{
     display: flex;
     flex-wrap: wrap;
@@ -238,7 +401,7 @@ footer {
     padding: 20px;
     justify-content:left;
     overflow-x: auto;
-    
+    overflow: hidden;
 }
 
 .browse-list-temp{
@@ -246,16 +409,11 @@ footer {
     width: 50%;
 }
 
-a{
-    text-decoration-line: none;
-    color: white;
-}
+
+
 
 .browse-item{
-    
     margin-left: 10px;
-    
-    
 }
 
 
@@ -263,6 +421,39 @@ a{
     
     border-radius: 10px;
     width: 200px;
+    position: relative;
+    transition: filter 0.3s ease-in-out;
+}
+
+.white_layer{
+    position: relative;
+    display: inline-block;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.white_layer img{
+    display: block;
+    width: 200px;
+    height: auto;
+    transition: opacity 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.white_layer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0); /* 초기에는 투명 */
+    transition: background 0.3s ease-in-out;
+}
+
+.white_layer:hover::after {
+    background: rgba(255, 255, 255, 0.1); /* 흰색 반투명 */
+    transform: scale(1.1);
 }
 
 .browse-item-type{
@@ -281,4 +472,21 @@ a{
 .browse-item-price{
     font-size: 15px;
     padding-top: 10px;
+}
+
+
+/*하단 네비게이션 css*/
+.pagination_navigation{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination_navigation li{
+    list-style: none;
+    width: 30px;
+    display: flex;
+    justify-content: center;
 }
