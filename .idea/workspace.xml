@@ -4,64 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dc8b3ca-1d26-451c-9e3e-2688d47164eb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/gamelist.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/StackAi-practice.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/StackAi-practice.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/12세.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/15세.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/19세.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/_ㅽ뙆_대뜑留_header.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/asdf/image/SPIDERMAN.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/몬스터헌터 와일즈 1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/몬스터헌터 와일즈 2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/몬스터헌터 와일즈 3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/몬스터헌터 와일즈 4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/몬스터헌터 와일즈 5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/몬스터헌터 와일즈 header.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/문명7 1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/문명7 2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/문명7 3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/문명7 4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/문명7 5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/문명7 header.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/스파이더맨 header.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/스파이더맨2 1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/스파이더맨2 2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/스파이더맨2 3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/스파이더맨2 4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/스파이더맨2 5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/엔더 릴리즈 2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/엔더 릴리즈 3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/엔더 릴리즈 5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/엔더 릴리즈1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/엔더릴리즈 4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/전연령.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/킹덤컴 1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/킹덤컴 2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/킹덤컴 3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/킹덤컴 4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/킹덤컴 5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/파크라이6 1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/파크라이6 2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/파크라이6 3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/파크라이6 4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/파크라이6 5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/파크라이6 header.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/풋볼매니저2024 1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/풋볼매니저2024 2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/풋볼매니저2024 3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/풋볼매니저2024 4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/풋볼매니저2024 5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/풋볼매니저2024 header.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/紐ъ뒪_고뿄____쇱쫰 header.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/asdf/image/MonsterHunterHeader.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/discover1Css.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/discover1Css.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discover1.html" beforeDir="false" afterPath="$PROJECT_DIR$/discover1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/discover1Js.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/discover1Js.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yyi.txt - 바로 가기.lnk" beforeDir="false" />
-    </list>
+    <list default="true" id="7dc8b3ca-1d26-451c-9e3e-2688d47164eb" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,6 +40,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\KB\Documents\GitHub\StackAi-practice" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="index.html" type="JavascriptDebugType" nameIsGenerated="true" uri="http://localhost:63342/StackAi-practice/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
@@ -118,7 +66,7 @@
       <option name="presentableId" value="Default" />
       <updated>1741065690941</updated>
       <workItem from="1741065692111" duration="160000" />
-      <workItem from="1741065868451" duration="4539000" />
+      <workItem from="1741065868451" duration="5409000" />
     </task>
     <servers />
   </component>
