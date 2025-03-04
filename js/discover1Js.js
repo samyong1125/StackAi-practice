@@ -20,6 +20,15 @@ const swiper1 = new Swiper('.swiper1', {
         clickable: true,
     },
 });
+const swiper2 = new Swiper('.swiper2', {
+    loop: true,
+    speed: 500,
+})
+
+
+
+
+
 document.addEventListener("touchmove", function(event) {
     if (event.touches.length > 1 || event.changedTouches[0].clientX !== 0) {
         event.preventDefault();

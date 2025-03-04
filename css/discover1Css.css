@@ -40,7 +40,7 @@ body {
 }
 
 /* 이미지 위에 그라데이션 레이어 추가 */
-.swiper-slide a::before {
+.swiper-slide1 a::before {
     content: '';
     position: absolute;
     bottom: 0;
