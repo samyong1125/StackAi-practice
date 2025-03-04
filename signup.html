@@ -47,7 +47,7 @@
 
         .checkbox-container {
             margin-top: 20px;
-            text-align: center;
+            /* text-align: center; */
         }
 
         .checkbox-container input {
@@ -70,7 +70,6 @@
             /* 각 항목 간 간격 */
             margin: 0 auto;
             margin-top: 50px;
-            text-align: center;
         }
 
         .s__done input[type="text"],
@@ -98,11 +97,70 @@
             border-radius: 20px;
             font-size: 18px;
             cursor: pointer;
+            display: block;
+            width: 40%;
+            margin: 20px auto 0;
         }
 
-        span {
+        .aaa {
             float: left;
             margin-left: 50px;
+        };
+        .button-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        @media screen and (max-width: 768px) {
+            body {
+                margin: 10px;
+            }
+
+            .s__done {
+                width: 90%;
+                max-width: none;
+                margin-top: 20px;
+                padding: 20px;
+            }
+
+            .s__done input[type="text"],
+            .s__done input[type="email"],
+            .s__done input[type="password"] {
+                width: 100%;
+                margin-left: 0;
+            }
+
+            .checkbox-container {
+                margin-top: 10px;
+            }
+
+            .aaa {
+                float: none;
+                text-align: left;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .s__done {
+                width: 100%;
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .s__done input[type="text"],
+            .s__done input[type="email"],
+            .s__done input[type="password"] {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            .s__done input[type="submit"] {
+                font-size: 16px;
+                padding: 12px;
+            }
         }
     </style>
 </head>
@@ -163,24 +221,26 @@
             </label>
         </div>-->
 
-        <div><span>성명</span></div>
+        <div class ="aaa"><span>성명</span></div>
         <input type="text" name="name" title="성명" id="name">
 
 
-        <div><span>이메일 주소</span></div>
+        <div class ="aaa"><span>이메일 주소</span></div>
         <input type="text" name="email" title="이메일 주소 입력" id="email_address">
 
 
-        <div><span>비밀번호</span></div>
+        <div class ="aaa"><span>비밀번호</span></div>
         <input type="text" name="password" title="비밀번호 입력" id="password">
 
 
-        <div><span>비밀번호확인</span></div>
+        <div class ="aaa"><span>비밀번호확인</span></div>
         <input type="text" name="password_check" title="비밀번호 확인" id="password_check">
 
-        <div><input type="submit" class="black_btn" title="회원가입 버튼" value="회원가입 제출" id="btn"></div>
+        <div class ="button-container">
+            <input type="submit" class="black_btn" title="회원가입 버튼" value="회원가입 제출" id="btn">
+        </div>
     </form>
-    <script src="../StackAi-practice/js/signup.js" defer></script>
+    <script src="../js/signup.js" defer></script>
 </body>
 
 </html>

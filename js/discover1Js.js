@@ -1,6 +1,7 @@
 const swiper1 = new Swiper('.swiper1', {
     loop: true,
     effect: 'creative', // creative 효과 활성화
+    autoplay: true,
     creativeEffect: {
         prev: {
             shadow: true, // 이전 슬라이드에 그림자 효과 적용
@@ -58,3 +59,13 @@ document.addEventListener("touchmove", function(event) {
         event.preventDefault();
     }
 }, { passive: false });
+
+fetch('gamelist.json')
+    .then(response => response.json())
+    .then(data => {
+        const randomGame = data[Math.floor(Math.random() * data.length)];
+        document.querySelector('.recommended-game-container img').src = randomGame.src;
+        document.querySelector('.recommended-game-container h3').textContent = randomGame.name;
+        document.querySelector('.recommended-game-container p').textContent = randomGame.title;
+    })
+    .catch(error => console.error('Error loading game list:', error));
