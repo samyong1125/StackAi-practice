@@ -23,6 +23,8 @@ iframe::-webkit-scrollbar {
     width: 100%;
     height: calc(100vh - 60px); /* 헤더 높이 제외 */
     overflow: hidden; /* 스크롤 방지 */
+    display: flex;
+    justify-content: center;
 }
 
 body {
