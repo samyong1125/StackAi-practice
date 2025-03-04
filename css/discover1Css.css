@@ -168,3 +168,21 @@ body {
 .swiper-button-next:hover, .swiper-button-prev:hover {
     background-color: rgba(255, 255, 255, 0.5);
 }
+
+/*좌우 스크롤 수정*/
+html, body {
+    overflow-x: hidden !important; /* 좌우 스크롤 차단 */
+    max-width: 100%;
+    height: 100%;
+    position: relative;
+    -webkit-overflow-scrolling: touch; /* 모바일 부드러운 스크롤 */
+}
+
+.swiper-container {
+    overflow: hidden; /* Swiper가 영역을 벗어나지 않도록 설정 */
+    width: 100%;
+}
+
+.game-list1 {
+    overflow-x: hidden; /* 추가적인 좌우 스크롤 차단 */
+}
