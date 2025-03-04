@@ -1,0 +1,955 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: white;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #1a1a1a;
+}
+
+nav a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+}
+.container {
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.swiper {
+    width: 900px;
+    height: 600px;
+    border-radius: 20px;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.my-pagination {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: relative;
+    right: 300px;
+
+}
+
+.page-btn {
+    border: none;
+    background-color: #121212;
+    height: 170px;
+    width: 300px;
+    margin: 10px 0;
+    color: white;
+    border-radius: 20px;
+    transition: background 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative; /* 추가: 상대 위치 설정 */
+    overflow: hidden; /* 추가: 넘치는 부분 숨김 */
+}
+
+.page-btn:hover {
+    background-color: #28282c;
+}
+
+.page-btn.active {
+    background-color: #28282c;
+}
+
+.page-btn::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--progress, 0%); /* JavaScript에서 업데이트될 변수 사용 */
+    height: 100%; /* 전체 높이 */
+    background: rgba(255, 255, 255, 0.15);
+    transition: width 0.1s linear; /* 부드러운 전환을 위해 짧은 transition 추가 */
+}
+
+.page-btn.active::after {
+    width: var(--progress, 0%); /* active 상태에서도 progress 변수 사용 */
+}
+
+.page-btn img {
+    width: 40%;
+    height: 70%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.page-btn span {
+    top: 30px;
+}
+
+.discover {
+    margin-top: 50px;
+    margin-left: 300px;
+    display: inline-flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.discover-arrow {
+    margin-left: 7px;
+    transition: transform 0.3s ease;
+}
+
+.discover:hover .discover-arrow {
+    transform: translateX(6px);
+}
+
+.prev-button {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2); /* 반투명 */
+    border-radius: 50%; /* 둥근 모양 */
+    transition: background 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    margin-left: 600px;
+}
+
+.prev-button:hover {
+    background: rgba(255, 255, 255, 0.4); /* 밝아짐 */
+    transform: scale(1.1); /* 살짝 확대 */
+}
+
+.next-button:hover {
+    background: rgba(255, 255, 255, 0.4); /* 밝아짐 */
+    transform: scale(1.1); /* 살짝 확대 */
+}
+
+.next-button {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2); /* 반투명 */
+    border-radius: 50%; /* 둥근 모양 */
+    transition: background 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+
+.game-list1 {
+    display: flex;
+    gap: 15px;
+    overflow-x: hidden; /* 스크롤바 숨기기 */
+    padding: 20px;
+    scroll-behavior: smooth; /* 부드러운 스크롤 */
+    margin: 0 auto; /* 가로 중앙 정렬 */
+    max-width: 1300px; /* 최대 너비 설정 */
+}
+
+.game-item {
+    flex: 0 0 auto;
+    width: 200px; /* 고정 너비 유지 */
+    background-color: #1E1E1E;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: center;
+    transition: transform 0.4s cubic-bezier(0.25, 0.45, 0.45, 1),
+    box-shadow 0.4s ease;
+    overflow: hidden;
+    will-change: transform, box-shadow;
+}
+
+.game-item:hover {
+    transform: scale(1.07) translateZ(0);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+}
+
+.game-item img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.game-item p {
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.game-item span {
+    color: #bbb;
+}
+
+.game-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.game-name {
+    width: 200px;
+    background-color: #1E1E1E;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: center;
+    transition: box-shadow 0.2s ease;
+}
+
+.game-name:hover {
+    box-shadow: 0 0 20px white;
+}
+
+.featured-list {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.featured-item {
+    width: 300px;
+    background-color: #1E1E1E;
+    padding: 30px 80px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.featured-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.featured-item h3 {
+    margin: 10px 0 5px;
+}
+
+.featured-item p {
+    color: #bbb;
+    font-size: 14px;
+}
+
+.shop-button {
+    background-color: #444;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.shop-button:hover {
+    background-color: #666;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.banner-container1 {
+    margin: 60px auto;
+    display: flex;
+    gap: 80px;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner1 {
+    width: 600px;
+    height: 400px;
+    background: #1e1e1e;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.4s cubic-bezier(0.25, 0.45, 0.45, 1),
+    box-shadow 0.4s ease;
+    will-change: transform, box-shadow;
+}
+
+.banner1 img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.banner1 h3 {
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.banner1:hover {
+    transform: scale(1.07) translateZ(0);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+}
+
+
+.discover-arrow1 {
+    margin-left: 7px;
+    transition: transform 0.3s ease;
+}
+
+.discover1:hover .discover-arrow1 {
+    transform: translateX(6px);
+}
+
+.prev-button1 {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2); /* 반투명 */
+    border-radius: 50%; /* 둥근 모양 */
+    transition: background 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    margin-left: 600px;
+}
+
+.prev-button1:hover {
+    background: rgba(255, 255, 255, 0.4); /* 밝아짐 */
+    transform: scale(1.1); /* 살짝 확대 */
+}
+
+.next-button1:hover {
+    background: rgba(255, 255, 255, 0.4); /* 밝아짐 */
+    transform: scale(1.1); /* 살짝 확대 */
+}
+
+.next-button1 {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2); /* 반투명 */
+    border-radius: 50%; /* 둥근 모양 */
+    transition: background 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+
+.game-list2 {
+    display: flex;
+    gap: 15px;
+    overflow-x: hidden; /* 스크롤바 숨기기 */
+    padding: 20px;
+    scroll-behavior: smooth; /* 부드러운 스크롤 */
+    margin: 0 auto; /* 가로 중앙 정렬 */
+    max-width: 1300px; /* 최대 너비 설정 */
+}
+
+footer {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 30px 50px;
+    font-size: 14px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: start;
+    padding-bottom: 20px;
+}
+
+.social-icons a {
+    margin-right: 15px;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.footer-column {
+    width: 30%;
+}
+
+.footer-column h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #ddd;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #888;
+}
+
+.footer-column ul li a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 12px;
+    color: #888;
+    border-top: 1px solid #333;
+    padding-top: 15px;
+}
+
+@media (max-width: 1920px) {
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #121212;
+        color: white;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        background-color: #1a1a1a;
+    }
+
+    nav a {
+        margin: 0 15px;
+        color: white;
+        text-decoration: none;
+    }
+    .container {
+        display: flex;
+        margin-top: 40px;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .swiper {
+        width: 900px;
+        height: 600px;
+        border-radius: 20px;
+    }
+
+    .swiper-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+
+    .my-pagination {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        position: relative;
+        right: 300px;
+
+    }
+
+    .page-btn {
+        border: none;
+        background-color: #121212;
+        height: 170px;
+        width: 300px;
+        margin: 10px 0;
+        color: white;
+        border-radius: 20px;
+        transition: background 0.3s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        position: relative; /* 추가: 상대 위치 설정 */
+        overflow: hidden; /* 추가: 넘치는 부분 숨김 */
+    }
+
+    .page-btn:hover {
+        background-color: #28282c;
+    }
+
+    .page-btn.active {
+        background-color: #28282c;
+    }
+
+    .page-btn::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: var(--progress, 0%); /* JavaScript에서 업데이트될 변수 사용 */
+        height: 100%; /* 전체 높이 */
+        background: rgba(255, 255, 255, 0.15);
+        transition: width 0.1s linear; /* 부드러운 전환을 위해 짧은 transition 추가 */
+    }
+
+    .page-btn.active::after {
+        width: var(--progress, 0%); /* active 상태에서도 progress 변수 사용 */
+    }
+
+    .page-btn img {
+        width: 40%;
+        height: 70%;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+
+    .page-btn span {
+        top: 30px;
+    }
+
+    .discover {
+        margin-top: 50px;
+        margin-left: 300px;
+        display: inline-flex;
+        align-items: center;
+        font-weight: bold;
+        font-size: 24px;
+        cursor: pointer;
+        color: white;
+        transition: all 0.3s ease;
+    }
+
+    .discover-arrow {
+        margin-left: 7px;
+        transition: transform 0.3s ease;
+    }
+
+    .discover:hover .discover-arrow {
+        transform: translateX(6px);
+    }
+
+    .prev-button {
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.2); /* 반투명 */
+        border-radius: 50%; /* 둥근 모양 */
+        transition: background 0.3s ease, transform 0.2s ease;
+        cursor: pointer;
+        margin-left: 600px;
+    }
+
+    .prev-button:hover {
+        background: rgba(255, 255, 255, 0.4); /* 밝아짐 */
+        transform: scale(1.1); /* 살짝 확대 */
+    }
+
+    .next-button:hover {
+        background: rgba(255, 255, 255, 0.4); /* 밝아짐 */
+        transform: scale(1.1); /* 살짝 확대 */
+    }
+
+    .next-button {
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.2); /* 반투명 */
+        border-radius: 50%; /* 둥근 모양 */
+        transition: background 0.3s ease, transform 0.2s ease;
+        cursor: pointer;
+    }
+
+
+    .game-list1 {
+        display: flex;
+        gap: 15px;
+        overflow-x: hidden; /* 스크롤바 숨기기 */
+        padding: 20px;
+        scroll-behavior: smooth; /* 부드러운 스크롤 */
+        margin: 0 auto; /* 가로 중앙 정렬 */
+        max-width: 1300px; /* 최대 너비 설정 */
+    }
+
+    .game-item {
+        flex: 0 0 auto;
+        width: 200px; /* 고정 너비 유지 */
+        background-color: #1E1E1E;
+        padding: 10px;
+        border-radius: 20px;
+        text-align: center;
+        transition: transform 0.4s cubic-bezier(0.25, 0.45, 0.45, 1),
+        box-shadow 0.4s ease;
+        overflow: hidden;
+        will-change: transform, box-shadow;
+    }
+
+    .game-item:hover {
+        transform: scale(1.07) translateZ(0);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+    }
+
+    .game-item img {
+        width: 100%;
+        border-radius: 20px;
+    }
+
+    .game-item p {
+        margin: 10px 0 5px;
+        font-weight: bold;
+    }
+
+    .game-item span {
+        color: #bbb;
+    }
+
+    .game-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+        margin: 20px auto;
+    }
+
+    .game-name {
+        width: 200px;
+        background-color: #1E1E1E;
+        padding: 10px;
+        border-radius: 20px;
+        text-align: center;
+        transition: box-shadow 0.2s ease;
+    }
+
+    .game-name:hover {
+        box-shadow: 0 0 20px white;
+    }
+
+    .featured-list {
+        display: flex;
+        gap: 20px;
+        padding: 20px;
+        justify-content: center;
+        margin-top: 50px;
+    }
+
+    .featured-item {
+        width: 300px;
+        background-color: #1E1E1E;
+        padding: 30px 80px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .featured-item img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .featured-item h3 {
+        margin: 10px 0 5px;
+    }
+
+    .featured-item p {
+        color: #bbb;
+        font-size: 14px;
+    }
+
+    .shop-button {
+        background-color: #444;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    .shop-button:hover {
+        background-color: #666;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .banner-container1 {
+        margin: 60px auto;
+        display: flex;
+        gap: 80px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .banner1 {
+        width: 600px;
+        height: 400px;
+        background: #1e1e1e;
+        border-radius: 15px;
+        overflow: hidden;
+        text-align: center;
+        transition: transform 0.4s cubic-bezier(0.25, 0.45, 0.45, 1),
+        box-shadow 0.4s ease;
+        will-change: transform, box-shadow;
+    }
+
+    .banner1 img {
+        width: 100%;
+        height: 80%;
+        object-fit: cover;
+    }
+
+    .banner1 h3 {
+        margin: 10px 0;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .banner1:hover {
+        transform: scale(1.07) translateZ(0);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+    }
+
+
+    .discover-arrow1 {
+        margin-left: 7px;
+        transition: transform 0.3s ease;
+    }
+
+    .discover1:hover .discover-arrow1 {
+        transform: translateX(6px);
+    }
+
+    .prev-button1 {
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.2); /* 반투명 */
+        border-radius: 50%; /* 둥근 모양 */
+        transition: background 0.3s ease, transform 0.2s ease;
+        cursor: pointer;
+        margin-left: 600px;
+    }
+
+    .prev-button1:hover {
+        background: rgba(255, 255, 255, 0.4); /* 밝아짐 */
+        transform: scale(1.1); /* 살짝 확대 */
+    }
+
+    .next-button1:hover {
+        background: rgba(255, 255, 255, 0.4); /* 밝아짐 */
+        transform: scale(1.1); /* 살짝 확대 */
+    }
+
+    .next-button1 {
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.2); /* 반투명 */
+        border-radius: 50%; /* 둥근 모양 */
+        transition: background 0.3s ease, transform 0.2s ease;
+        cursor: pointer;
+    }
+
+
+    .game-list2 {
+        display: flex;
+        gap: 15px;
+        overflow-x: hidden; /* 스크롤바 숨기기 */
+        padding: 20px;
+        scroll-behavior: smooth; /* 부드러운 스크롤 */
+        margin: 0 auto; /* 가로 중앙 정렬 */
+        max-width: 1300px; /* 최대 너비 설정 */
+    }
+
+    footer {
+        background-color: #1a1a1a;
+        color: white;
+        padding: 30px 50px;
+        font-size: 14px;
+    }
+
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-top {
+        display: flex;
+        justify-content: start;
+        padding-bottom: 20px;
+    }
+
+    .social-icons a {
+        margin-right: 15px;
+    }
+
+    .social-icons img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .footer-links {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 20px;
+    }
+
+    .footer-column {
+        width: 30%;
+    }
+
+    .footer-column h4 {
+        font-size: 16px;
+        margin-bottom: 10px;
+        color: #ddd;
+    }
+
+    .footer-column ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-column ul li {
+        margin-bottom: 8px;
+    }
+
+    .footer-column ul li a {
+        text-decoration: none;
+        color: #888;
+    }
+
+    .footer-column ul li a:hover {
+        color: white;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        font-size: 12px;
+        color: #888;
+        border-top: 1px solid #333;
+        padding-top: 15px;
+    }
+}
+
+@media (max-width: 1850px) {
+    .my-pagination {
+        right: 200px;
+    }
+}
+
+@media (max-width: 1800px) {
+    .my-pagination {
+        right: 220px;
+    }
+
+    .swiper {
+        width: 950px
+    }
+}
+
+@media (max-width: 1700px) {
+    .swiper {
+        width: 900px;
+    }
+}
+
+@media (max-width: 1600px) {
+    .swiper {
+        width: 830px;
+    }
+
+    .my-pagination {
+        right: 200px;
+    }
+}
+
+@media (max-width: 1550px) {
+    .my-pagination {
+        right: 150px;
+    }
+}
+
+@media (max-width: 1500px) {
+    .swiper {
+        height: 500px;
+        width: 800px;
+    }
+
+    .my-pagination {
+        right: 150px;
+    }
+
+    .page-btn {
+        width: 300px;
+        height: 140px;
+    }
+}
+
+@media (max-width: 1440px) {
+
+    .swiper {
+        width: 800px;
+        height: 500px
+    }
+
+    .my-pagination {
+        right: 150px;
+    }
+
+    .page-btn {
+        width: 300px;
+        height: 140px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .my-pagination {
+        right: 90px;
+    }
+
+    .prev-button {
+        margin-left: 400px;
+    }
+
+    .prev-button1 {
+        margin-left: 400px;
+    }
+}
+
+@media (max-width: 1300px) {
+    .swiper {
+        width: 700px;
+        height: 400px;
+    }
+
+    .page-btn {
+        width: 250px;
+        height: 120px;
+    }
+
+    .discover {
+        margin-left: 100px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .banner1 {
+        width: 500px;
+        height: 380px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .my-pagination {
+        right: 60px;
+    }
+}

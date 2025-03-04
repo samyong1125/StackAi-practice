@@ -1,0 +1,133 @@
+html {
+    overflow-x: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* 세로 정렬 */
+    align-items: center; /* 가로 중앙 정렬 */
+    margin: 0;
+    padding: 20px 0; /* 상하 패딩 추가 */
+    min-height: 100vh;
+}
+
+.swiper1 {
+    border-radius: 20px;
+    width: 80%; /* 너비 조정 */
+    height: 60vh; /* 높이 고정 */
+    margin: 20px auto; /* 상하 여백 추가 */
+}
+
+.swiper-slide1 {
+    border-radius: 20px;
+    position: relative; /* parallax 효과를 위해 position 설정 */
+}
+
+.swiper-slide1 a {
+    border-radius: 20px;
+    display: block;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.swiper-slide1 img {
+    border-radius: 20px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease-out; /* 부드러운 전환 효과 추가 */
+}
+
+/* 이미지 위에 그라데이션 레이어 추가 */
+.swiper-slide a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70%; /* 그라데이션 높이 조절 */
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 20%, rgba(0,0,0,0) 100%);
+    z-index: 2; /* 이미지보다 위에 배치 */
+}
+
+/* 텍스트 위치 조정 및 가독성 향상 */
+.slide-content {
+    position: absolute;
+    bottom: 30px; /* 하단에서의 거리 */
+    left: 30px;
+    color: white;
+    z-index: 3; /* 그라데이션보다 위에 배치 */
+    max-width: 70%;
+}
+
+.slide-content h3 {
+    font-size: 2.5em;
+    margin: 0 0 10px 0;
+    opacity: 0.9; /* 텍스트 투명도 조절 */
+}
+
+.slide-content p {
+    font-size: 1.2em;
+    margin: 0 0 20px 0;
+    opacity: 0.9;
+}
+
+/* 버튼 스타일 유지 */
+.slide-btn {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.slide-btn:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.game-list1 {
+    width: 80%; /* 스와이퍼와 동일한 너비 */
+    margin: 20px auto; /* 상하 여백 추가 */
+    /* 기존 스타일 유지 */
+    display: flex;
+    gap: 15px;
+    overflow-x: hidden;
+    padding: 20px;
+    scroll-behavior: smooth;
+    max-width: 1300px;
+}
+.game-item {
+    flex: 0 0 auto;
+    width: 200px; /* 고정 너비 유지 */
+    background-color: #1E1E1E;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: center;
+    transition: transform 0.4s cubic-bezier(0.25, 0.45, 0.45, 1),
+    box-shadow 0.4s ease;
+    overflow: hidden;
+    will-change: transform, box-shadow;
+}
+
+.game-item:hover {
+    transform: scale(1.07) translateZ(0);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+}
+
+.game-item img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.game-item p {
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.game-item span {
+    color: #bbb;
+}

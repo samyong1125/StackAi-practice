@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gamenews</title>
+    <style>
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        html {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        iframe {
+            border: none;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            scrollbar-width: none;
+        }
+
+        iframe::-webkit-scrollbar {
+            display: none;
+        }
+
+        .iframe1 {
+            width: 100%;
+            height: calc(100vh - 60px); /* 헤더 높이 제외 */
+            overflow: hidden; /* 스크롤 방지 */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #1a1a1a;
+        }
+
+        #header-button { /* 로그인 버튼 */
+            writing-mode: horizontal-tb;
+            white-space: nowrap;
+            color: white; /* 기본 텍스트 색상 */
+            background-color: black; /* 배경색 - 검정색 */
+            border: 2px solid white; /* 테두리 - 하얀색 */
+            border-radius: 12px; /* 모서리 둥글기 줄이기 */
+            padding: 3px 8px; /* 패딩 줄여서 크기 축소 */
+            font-size: 12px; /* 글씨 크기 줄이기 */
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* 내부 a 태그 스타일 - 기본 텍스트 색상 상속 */
+        #header-button a {
+            text-decoration: none;
+            color: inherit; /* 부모(#header-button)의 color 속성을 따름 */
+            display: block;
+            padding: 3px 8px;
+            border-radius: 12px;
+        }
+
+        /* 마우스를 올렸을 때 색상 반전 */
+        #header-button:hover {
+            background-color: white;
+            color: black; /* 부모 요소의 색상 변경 */
+        }
+
+        /* 내부 a 태그도 부모의 변경된 색상을 따름 */
+        #header-button:hover a {
+            color: inherit;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1a1a1a;
+        }
+
+        .DBN_div {
+            margin-left: 15%
+            display: flex;
+            justify-content: center;
+        }
+
+        .DBN_header {
+            display: flex;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #121212;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            background-color: #222;
+            padding: 10px 15px;
+            border-radius: 20px;
+            width: 200px;
+        }
+
+        .search-box input {
+            background: none;
+            border: none;
+            outline: none;
+            color: white;
+            margin-left: 8px;
+            width: 100%;
+        }
+
+        .search-box input::placeholder {
+            color: #888;
+        }
+
+        .DBN_nav {
+            display: flex;
+            margin-left: 30px;
+            gap: 20px;
+        }
+
+        .DBN_nav a {
+            text-decoration: none;
+            color: #888;
+            font-weight: bold;
+        }
+
+        .DBN_nav a.active {
+            color: white;
+        }
+
+        .DBN_nav a:hover {
+            color: #ccc;
+        }
+
+        .active {
+            text-decoration: underline;
+            text-decoration-color: white;
+            font-weight: bold;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .Main {
+            display: flex;
+            justify-content: center; /* 수평으로 중앙 정렬 */
+            width: 100%;
+            padding: 0 10px; /* 좌우 여백을 조금 줄 수 있음 */
+            flex-direction: column; /* 세로로 배치 */
+            align-items: center; /* 세로로도 중앙 정렬 */
+        }
+
+        .news-title {
+            font-size: 24px;
+            font-weight: bold;
+
+
+        }
+
+
+
+        .game_list_1 {
+            display: flex;
+            flex-direction: row; /* 이미지를 왼쪽, 텍스트는 오른쪽으로 배치 */
+            justify-content: flex-start;
+            gap: 20px; /* 카드들 사이에 여백 추가 */
+            width: 100%;
+            max-width: 1200px; /* 최대 너비 제한 */
+            margin-bottom: 30px; /* game_list_1의 하단에 30px 간격 추가 */
+
+        }
+
+        .game1, .game2 {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 45%; /* 이미지와 텍스트를 나누기 위한 비율 */
+            border-radius: 10px;
+            background-color: #1a1a1a; /* 카드 배경색 */
+            padding: 15px;
+            color: white;
+            box-sizing: border-box;
+
+        }
+
+        .game1 img, .game2 img {
+            width: 100%; /* 이미지가 카드 너비에 맞게 조정 */
+            height: auto; /* 비율 유지하면서 크기 조정 */
+            border-radius: 8px;
+            object-fit: cover; /* 이미지 비율에 맞게 자르기 */
+        }
+
+        .game1 p, .game2 p {
+            font-size: 12px;
+            margin: 10px 0;
+        }
+
+        .game1 p:first-of-type, .game2 p:first-of-type {
+            font-weight: bold; /* 제목은 좀 더 두껍게 */
+            font-size: 8px;
+        }
+
+        .game1 p:last-of-type, .game2 p:last-of-type {
+            color: #888; /* "자세히 보기"는 좀 더 흐리게 */
+            font-size: 14px;
+            text-decoration: underline;
+        }
+
+        .game1 p:last-of-type:hover, .game2 p:last-of-type:hover {
+            color: white; /* hover 시 색상 변경 */
+        }
+
+        .game_list_2 {
+            display: flex;
+            flex-wrap: wrap; /* 카드들이 넘치면 자동으로 줄 바꿈 */
+            justify-content: space-between; /* 카드들이 좌우로 꽉 차도록 배치 */
+            gap: 20px; /* 카드 간 간격 */
+            width: 100%;
+            max-width: 1200px;
+            margin-top : 20px;
+            box-sizing: border-box;
+
+        }
+
+        .game3, .game4, .game5, .game6, .game7, .game8, .game9, .game10, .game11, .game12 {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-start;
+            width: 100%; /* 카드가 100% 너비를 차지 */
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            padding: 15px;
+            color: white;
+            box-sizing: border-box;
+            gap: 20px; /* 이미지와 텍스트 사이에 간격 추가 */
+            white-space: nowrap;
+            height: calc(1/3 * 100vh); /* game_list_1의 2/3 높이로 설정 */
+        }
+
+        .game3 img, .game4 img, .game5 img, .game6 img, .game7 img, .game8 img, .game9 img, .game10 img, .game11 img, .game12 img {
+            width: 30%; /* 이미지가 카드의 30% 크기 차지 */
+            height: auto;
+            object-fit: cover; /* 이미지 비율에 맞게 자르기 */
+            border-radius: 8px;
+        }
+
+        .game3 p, .game4 p, .game5 p, .game6 p, .game7 p, .game8 p, .game9 p, .game10 p, .game11 p, .game12 p {
+            font-size: 10px;
+            margin: 10px 0;
+            width: 70%; /* 텍스트가 카드의 70% 크기 차지 */
+            text-align: left; /* 텍스트 왼쪽 정렬 */
+            line-height: 1.5;
+        }
+
+        .game3 p:first-of-type, .game4 p:first-of-type, .game5 p:first-of-type, .game6 p:first-of-type,
+        .game7 p:first-of-type, .game8 p:first-of-type, .game9 p:first-of-type, .game10 p:first-of-type,
+        .game11 p:first-of-type, .game12 p:first-of-type {
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .game3 p:last-of-type, .game4 p:last-of-type, .game5 p:last-of-type, .game6 p:last-of-type,
+        .game7 p:last-of-type, .game8 p:last-of-type, .game9 p:last-of-type, .game10 p:last-of-type,
+        .game11 p:last-of-type, .game12 p:last-of-type {
+            color: #888;
+            font-size: 8px;
+            text-decoration: underline;
+        }
+
+        .game3 p:last-of-type:hover, .game4 p:last-of-type:hover, .game5 p:last-of-type:hover,
+        .game6 p:last-of-type:hover, .game7 p:last-of-type:hover, .game8 p:last-of-type:hover,
+        .game9 p:last-of-type:hover, .game10 p:last-of-type:hover,
+        .game11 p:last-of-type:hover, .game12 p:last-of-type:hover {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="news_title">
+    에픽게임즈 새 소식
+</div>
+
+<div class="Main">
+
+<div class="game_list_1">
+    <div class="game1">
+        <img src="https://cdn2.unrealengine.com/screenshot-2025-02-17-163512-1282x686-afb280b0de47.png" alt="no image">
+        <p>
+            7일 전
+        </p>
+
+        <p>
+            Star Wars: Knights of the Old Republic I 및 II, Epic Games Store 모바일에서 무료로 이용 가능
+        </p>
+        <p>
+            다음은 이번 달 지금까지 Epic Games Store에 출시된 모바일 게임입니다.
+        </p>
+        <p>
+            자세히 보기
+        </p>
+    </div>
+
+    <div class="game2">
+        <img src="https://cdn2.unrealengine.com/kf3-ninja-medic-sharpshooter-groupshot-3840x2160-7b0d905f7e8f.png" alt="no image">
+        <p>
+            14일 전
+        </p>
+        <p>
+            더 씽, 에이리언, 프레데터가 Killing Floor 3의 형성에 도움을 준 방식
+        </p>
+        <p>
+            Killing Floor 3 devs talk body horror, storytelling, and finding the balance
+        </p>
+        <p>
+            자세히 보기
+        </p>
+    </div>
+</div>
+
+<br>
+
+
+    <div class="game_list_2">
+        <div class="game3">
+            <img src="https://cdn2.unrealengine.com/ko-fb-tw-social-share-image-1920x1080-06e93006fe13.jpg">
+            <div class="game3_text">
+            <p>
+                13일 전
+            </p>
+
+            <p>
+                Epic Games Store 2024년 되돌아보기
+            </p>
+            <p>
+                자세히 보기
+            </p>
+                </div>
+        </div>
+
+        <div class="game4">
+
+            <img src="https://cdn2.unrealengine.com/farming-simulator-25-nexat-pack-harvesting-2560x1440-b616e071af5d.jpg">
+            <div class="game4_text">
+            <p>
+                16일 전
+            </p>
+
+            <p>
+                Farming Simulator 25가 한 번에 한 뙈기씩 훈훈한 게임 커뮤니티를 구축한 과정
+            </p>
+            <p>
+                초라하게 시작한 시뮬레이션 게임 Farming Simulator 25가 어떻게 하드코어 농부 커뮤니티를 구축할 수 있었는지 살펴봅니다.
+            </p>
+            <p>
+                자세히 보기
+            </p>
+            </div>
+        </div>
+
+        <div class="game5">
+            <img src="https://cdn2.unrealengine.com/ko-winter-sale-blog-asset-1920x1080-10a96273864b.jpg">
+            <div class="game5_text">
+                <p>
+                17일 전
+            </p>
+
+            <p>
+                Epic Games Store 2025 겨울 세일 구매자 가이드에서 따끈따끈한 특가를 잡아보세요!
+            </p>
+            <p>
+                좋아하는 게임에 ~75% 할인 혜택을 받으세요.
+            </p>
+            <p>
+                자세히 보기
+            </p>
+                </div>
+        </div>
+
+        <div class="game6">
+            <img src="https://cdn2.unrealengine.com/header-1920x1080-7f67bbf15a27.jpg">
+            <div class="game6_text">
+            <p>
+                29일 전
+            </p>
+
+            <p>
+                게임의 미래를 발견하세요: Epic Games Store 2025년 출시 프리뷰
+            </p>
+            <p>
+                신작과 기존 인기작의 후속작을 통해 2025년에는 게임의 미래가 펼쳐집니다.
+            </p>
+            <p>
+                자세히 보기
+            </p>
+        </div>
+        </div>
+
+        <div class="game7">
+            <img src="https://cdn2.unrealengine.com/ko-egs-fb-social-1920x1080-1920x1080-7468ef36ba46.jpg">
+            <div class="game7_text">
+            <p>
+                1개월 전
+            </p>
+
+            <p>
+                Epic Games Store 모바일에 제3자 타이틀, 무료 게임 등 추가
+            </p>
+
+            <p>
+                자세히 보기
+            </p>
+            </div>
+        </div>
+
+        <div class="game8">
+            <img src="https://cdn2.unrealengine.com/assassins-creed-shadows-4-3840x2160-f39834a5370e.jpg">
+            <div class="game8_text">
+            <p>
+                1개월 전
+            </p>
+            <p>
+                어쌔신 크리드 섀도우스가 시리즈의 공식에 가져온 7가지 혁신
+            </p>
+            <p>
+                Ubisoft가 새로 출시하는 살인적 시대극은 2017년 어쌔신 크리드 오리진 이래 가장 큰 변화를 시리즈에 도입합니다.
+            </p>
+            <p>
+                자세히 보기
+            </p>
+        </div>
+        </div>
+
+        <div class="game9">
+            <img src="https://cdn2.unrealengine.com/33-immortals-key-1920x1080-f4aa094b4223.jpg">
+            <div class="game9_text">
+            <p>
+                1개월 전
+            </p>
+            <p>
+                33인 로그라이크의 진수를 보여주는 33 Immortals
+            </p>
+            <p>
+                Thunder Lotus의 로그라이크 신작은 무려 33인 로비를 자랑합니다. 33인 로그라이크는 과연 어떤 모습일까요? 크리에이티브 디렉터 Stephan Logier와 이야기를 나눕니다.
+            </p>
+            <p>
+                자세히 보기
+            </p>
+                </div>
+        </div>
+
+        <div class="game10">
+            <img src="https://cdn2.unrealengine.com/delta-force-feature-squad-selection-1920x1080-eab276f572e8.jpg">
+            <div class="game10_text">
+            <p>
+                1개월 전
+            </p>
+            <p>
+                기존 블록버스터 슈팅 게임의 아성에 도전하는 Delta Force
+            </p>
+            <p>
+                Team Jade가 엘리트 슈팅 게임 디자이너들을 모아서 세월에 묻힌 전술 FPS 시리즈 Delta Force를 현대에 맞게 되살린 비화를 읽어보세요.
+            </p>
+            <p>
+                자세히 보기
+            </p>
+        </div>
+        </div>
+
+        <div class="game11">
+            <img src="https://cdn2.unrealengine.com/sniper-elite-resistance-interview-going-even-deeper-behind-enemy-lines-3840x2160-fddaee2973ca.png">
+            <div class="game11_text">
+            <p>
+                2개월 전
+            </p>
+
+            <p>
+                Sniper Elite: Resistance 인터뷰: 적진 너머로 더 깊숙이 침투하다
+            </p>
+            <p>
+                Rebellion이 제2차 세계 대전 잠입 샌드박스의 완성, 오랜 시간 협동 캐릭터였던 해리 호커의 단독 데뷔, 죄책감 없는 나치 헤드샷의 스릴을 이야기합니다
+            </p>
+            <p>
+                자세히 보기
+            </p>
+                </div>
+        </div>
+
+        <div class="game12">
+            <img src="https://cdn2.unrealengine.com/dungeon-keeper-10-3840x2160-cb2fd54eb1ff.jpg">
+            <div class="game12_text">
+            <p>
+                2개월 전
+            </p>
+
+            <p>
+                저주, 마약, 바위, 트롤: Dungeon Keeper의 흥망성쇠
+            </p>
+            <p>
+                Peter Molyneux, Mark Healey, Nick Goldsworthy가 신 게임 장르의 빛나는 이단아인 Dungeon Keeper의 파란만장한 역사를 얘기합니다.
+            </p>
+            <p>
+                자세히 보기
+            </p>
+                </div>
+        </div>
+
+<div class="row_index">
+
+        1
+        2
+        3
+        4
+        5
+        …
+        144
+</div>
+
+    </div>
+
+</body>
+</html>

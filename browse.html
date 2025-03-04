@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse</title>
+    <link rel="stylesheet" href="css/borwse.css">
+</head>
+<body>
+    <div class="borwse_wrap">
+        <div class="game-title">
+            Populer Genres
+        </div>
+        <div class="browse-list">
+            <div class="game-item">
+                <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
+                <p>
+                    Action Games
+                </p>
+            </div>
+
+            <div class="game-item">
+                <img src="https://cdn1.epicgames.com/spt-assets/71de136ea7ab4a01a8a926036c1e9738/the-throne-m96rq.png?resize=1&w=360&h=480&quality=medium" alt="">
+                <p>
+                    Action Games
+                </p>
+            </div>
+            
+            <div class="game-item">
+                <img src="https://cdn1.epicgames.com/spt-assets/62b23c2ed2e64c6c83bbbaf509470da4/velvet-bite-softly-with-teeth-1ome6.jpg?resize=1&w=360&h=480&quality=medium" alt="">
+                <p>
+                    Action Games
+                </p>
+            </div>
+            
+            <div class="game-item">
+                <img src="https://cdn1.epicgames.com/offer/0f4a572a3c1541319db70c3737d3a123/EGS_TwoPointHospital_TwoPointStudios_S2_1200x1600-8bd004a67b677888a8a1510bde5aa586?resize=1&w=360&h=480&quality=medium" alt="">
+                <p>
+                    Action Games
+                </p>
+            </div>
+        </div>
+
+
+        <div class="browse_main">
+            <aside class="browse_fillter">
+
+                <div class="fillter_reset">
+                
+                    <div class="fillter_reset_title">
+                        Filters (1)
+                    </div>
+
+                    <button type="button" id="fillter_reset_btn" onclick="fillter_reset()"> reset </button>
+                    
+                </div>
+
+                <div class="fillter_inputbox">
+                         <span class="fillter_input_icon">
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" 
+                            class="svg css-uwwqev" 
+                            viewBox="0 0 21 20"
+                             preserveAspectRatio="xMidYMid meet">
+                             
+                                <g transform="scale(1 -1) rotate(-45 -11.93502884 -2)" 
+                                stroke="currentColor" 
+                                stroke-width="1.65" 
+                                fill="none" 
+                                fill-rule="evenodd">
+
+                                <circle cx="7.70710678" cy="7.70710678" r="7"></circle>
+                                <path d="M15.2071068 8.62132034h5.6923881" stroke-linecap="square"></path>
+                                </g>
+                            </svg>
+
+                         </span>
+                        <input type="text" class="fillter_input" placeholder="Keywords">
+                   
+                </div>
+
+                <div class="fillter_list">
+                    
+                    <hr>
+
+                    <div class="fillter_item">
+                        <button type="button" 
+                        id="fillter_btn" 
+                        class="fillter_btn" 
+                        onclick="fillter_open('Event_fillter')">Event</button> 
+
+                        <div id="Event_fillter" class="fillter_item_child">
+                            
+                            <div>
+                                Deals of the week
+                            </div>
+                        
+                        
+                            <div>
+                                EA Classic Games on Epic
+                            </div>
+                        
+                            <div>
+                                Far Cry Anniversary Sale
+                            </div>
+                        
+                        
+                            <div>
+                            First Run
+                            </div>
+                            
+
+                        </div>
+                    </div>
+                        
+                    <hr>
+
+
+                    
+                    <div class="fillter_item">
+                        <button type="button" class="fillter_btn"  onclick="fillter_open('Price_fillter')">Price</button>
+
+                        <div id="Price_fillter" class="fillter_item_child">
+                            <div>
+                                Free
+                            </div>
+                            <div>
+                                Under ₩11,000
+                            </div>
+                            <div>
+                                Under ₩22,000
+                            </div>
+                            <div>
+                                Under ₩33,000
+                            </div>
+                            <div>
+                                ₩15,000 and above
+                            </div>
+                            <div>
+                                Discounted
+                            </div>
+                        </div>
+                    </div>
+                        
+                    
+                    <hr>
+
+                    
+                    <div class="fillter_item">
+                        <button type="button" class="fillter_btn" onclick="fillter_open('Genre_fillter')">Genre</button>
+                        <div id="Genre_fillter" class="fillter_item_child">
+                            <div>
+                                Action
+                            </div>
+                            <div>
+                                Action-Adventure
+                            </div>
+                            <div>
+                                Adventure
+                            </div>
+                            <div>
+                                Card Game
+                            </div>
+                            <div>
+                                Casual
+                            </div>
+                            <div>
+                                City Builder
+                            </div>
+                            <div>
+                                Comedy
+                            </div>
+                            <div>
+                                Dungeon Crawler
+                            </div>
+                            <div>
+                                Exploration
+                            </div>
+                            <div>
+                                Fantasy
+                            </div>
+                            <div>
+                                Fighting
+                            </div>
+                            <div>
+                                First Person
+                            </div>
+                            <div>
+                                Horror
+                            </div>
+                            <div>
+                                Indie
+                            </div>
+                        </div>
+                    </div>
+                        
+                    <hr>
+
+                </div>
+                
+            </aside>
+
+            <div class="browse_section">
+
+                <div class="browse_section_fillter">
+                    Show :
+                    <select name="" id="">
+                        <option value="">All</option>
+                        <option value="">Comming Soon</option>
+                        <option value="">Alphabetical</option>
+                        <option value="">Price : High to Low</option>
+                        <option value="">Price : Low to High</option>
+                    </select>
+                    
+                </div>
+
+
+
+
+                <div class="browse-list">
+                    
+                        
+                            <div class="browse-item">
+                                <a href="">
+                                    <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
+                                    
+
+                                    <div class="browse-item-type">
+                                        base Games
+                                    </div>
+
+                                    <div class="browse-item-title">
+                                        D ball
+                                    </div>
+
+                                    <div class="browse-item-price">
+                                        ￦45,000
+                                    </div>
+
+                                </a>
+                            </div>
+                    
+
+                        <div class="browse-item">
+                            
+                            <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
+                            
+
+                            <div class="browse-item-type">
+                                base Games
+                            </div>
+
+                            <div class="browse-item-title">
+                                D ball
+                            </div>
+
+                            <div class="browse-item-price">
+                                ￦45,000
+                            </div>
+                        </div>
+
+
+
+                        <div class="browse-item">
+                            
+                            <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
+                            
+
+                            <div class="browse-item-type">
+                                base Games
+                            </div>
+
+                            <div class="browse-item-title">
+                                D ball
+                            </div>
+
+                            <div class="browse-item-price">
+                                ￦45,000
+                            </div>
+                        </div>
+
+
+                        <div class="browse-item">
+                            
+                            <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
+                            
+
+                            <div class="browse-item-type">
+                                base Games
+                            </div>
+
+                            <div class="browse-item-title">
+                                D ball
+                            </div>
+
+                            <div class="browse-item-price">
+                                ￦45,000
+                            </div>
+                        </div>
+
+
+
+                        <div class="browse-item">
+                            
+                            <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
+                            
+
+                            <div class="browse-item-type">
+                                base Games
+                            </div>
+
+                            <div class="browse-item-title">
+                                D ball
+                            </div>
+
+                            <div class="browse-item-price">
+                                ￦45,000
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="browse-item">
+                            
+                            <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
+                            
+
+                            <div class="browse-item-type">
+                                base Games
+                            </div>
+
+                            <div class="browse-item-title">
+                                D ball
+                            </div>
+
+                            <div class="browse-item-price">
+                                ￦45,000
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="browse-item">
+                            
+                            <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
+                            
+
+                            <div class="browse-item-type">
+                                base Games
+                            </div>
+
+                            <div class="browse-item-title">
+                                D ball
+                            </div>
+
+                            <div class="browse-item-price">
+                                ￦45,000
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="browse-item">
+                            
+                            <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
+                            
+
+                            <div class="browse-item-type">
+                                base Games
+                            </div>
+
+                            <div class="browse-item-title">
+                                D ball
+                            </div>
+
+                            <div class="browse-item-price">
+                                ￦45,000
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="browse-item">
+                            
+                            <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
+                            
+
+                            <div class="browse-item-type">
+                                base Games
+                            </div>
+
+                            <div class="browse-item-title">
+                                D ball
+                            </div>
+
+                            <div class="browse-item-price">
+                                ￦45,000
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="browse-item">
+                            
+                            <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
+                            
+
+                            <div class="browse-item-type">
+                                base Games
+                            </div>
+
+                            <div class="browse-item-title">
+                                D ball
+                            </div>
+
+                            <div class="browse-item-price">
+                                ￦45,000
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="browse-item">
+                            
+                            <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
+                            
+
+                            <div class="browse-item-type">
+                                base Games
+                            </div>
+
+                            <div class="browse-item-title">
+                                D ball
+                            </div>
+
+                            <div class="browse-item-price">
+                                ￦45,000
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="browse-item">
+                            
+                            <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
+                            
+
+                            <div class="browse-item-type">
+                                base Games
+                            </div>
+
+                            <div class="browse-item-title">
+                                D ball
+                            </div>
+
+                            <div class="browse-item-price">
+                                ￦45,000
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="browse-item">
+                            
+                            <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
+                            
+
+                            <div class="browse-item-type">
+                                base Games
+                            </div>
+
+                            <div class="browse-item-title">
+                                D ball
+                            </div>
+
+                            <div class="browse-item-price">
+                                ￦45,000
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="browse-item">
+                            
+                            <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
+                            
+
+                            <div class="browse-item-type">
+                                base Games
+                            </div>
+
+                            <div class="browse-item-title">
+                                D ball
+                            </div>
+
+                            <div class="browse-item-price">
+                                ￦45,000
+                            </div>
+                        </div>
+
+
+
+                        <div class="browse-item">
+                            
+                            <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
+                            
+
+                            <div class="browse-item-type">
+                                base Games
+                            </div>
+
+                            <div class="browse-item-title">
+                                D ball
+                            </div>
+
+                            <div class="browse-item-price">
+                                ￦45,000
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="browse-item">
+                            
+                            <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
+                            
+
+                            <div class="browse-item-type">
+                                base Games
+                            </div>
+
+                            <div class="browse-item-title">
+                                D ball
+                            </div>
+
+                            <div class="browse-item-price">
+                                ￦45,000
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="browse-item">
+                            
+                            <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
+                            
+
+                            <div class="browse-item-type">
+                                base Games
+                            </div>
+
+                            <div class="browse-item-title">
+                                D ball
+                            </div>
+
+                            <div class="browse-item-price">
+                                ￦45,000
+                            </div>
+                        </div>
+
+
+
+                        <div class="browse-item">
+                            
+                            <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
+                            
+
+                            <div class="browse-item-type">
+                                base Games
+                            </div>
+
+                            <div class="browse-item-title">
+                                D ball
+                            </div>
+
+                            <div class="browse-item-price">
+                                ￦45,000
+                            </div>
+                        </div>
+
+
+
+
+
+                
+                    </div>
+                
+
+                
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/browse.js"></script>
+</body>
+</html>

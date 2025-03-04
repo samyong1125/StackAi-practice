@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게임스토어</title>
+    <style>
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        html {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #1a1a1a;
+            flex-wrap: wrap;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .iframe-container {
+            width: 100%;
+            height: calc(100vh - 60px);
+            overflow: hidden;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .DBN_div {
+            margin-left: 15%;
+        }
+
+        .DBN_header {
+            display: flex;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #121212;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            background-color: #222;
+            padding: 10px 15px;
+            border-radius: 20px;
+            width: 200px;
+        }
+
+        .search-box input {
+            background: none;
+            border: none;
+            outline: none;
+            color: white;
+            margin-left: 8px;
+            width: 100%;
+        }
+
+        .DBN_nav {
+            display: flex;
+            margin-left: 30px;
+            gap: 20px;
+        }
+
+        .DBN_nav a {
+            text-decoration: none;
+            color: #888;
+            font-weight: bold;
+        }
+
+        .DBN_nav a.active {
+            color: white;
+        }
+
+        /* 반응형 스타일 */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            nav a {
+                padding: 10px;
+                display: block;
+            }
+
+            .DBN_div {
+                margin-left: 0;
+            }
+
+            .DBN_header {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="logo"><a href="index.html" style="text-decoration: none; color: white;">GAME STORE</a></div>
+    <button class="menu-toggle">☰</button>
+    <nav>
+        <a href="#">탐색</a>
+        <a href="#">지원</a>
+        <a href="#">배포</a>
+    </nav>
+</header>
+<div class="DBN_div">
+    <div class="DBN_header">
+        <div class="search-box">
+            🔍 <input type="text" placeholder="Search store">
+        </div>
+        <div class="DBN_nav">
+            <a href="#" class="active">Discover</a>
+            <a href="#">Browse</a>
+            <a href="#">News</a>
+        </div>
+    </div>
+</div>
+<div class="iframe-container">
+    <iframe src="discover.html"></iframe>
+</div>
+<script>
+    document.querySelector(".menu-toggle").addEventListener("click", function () {
+        const nav = document.querySelector("nav");
+        if (nav.style.display === "flex") {
+            nav.style.display = "none";
+        } else {
+            nav.style.display = "flex";
+        }
+    });
+</script>
+<script>
+    window.addEventListener("DOMContentLoaded", function () {
+        const iframe = document.querySelector("iframe");
+        const navLinks = document.querySelectorAll(".DBN_nav a");
+
+        iframe.addEventListener("load", function () {
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+
+            // iframe 내 스크롤 이벤트 감지
+            iframeDoc.addEventListener("scroll", function () {
+                document.documentElement.scrollTop = iframeDoc.documentElement.scrollTop;
+                document.body.scrollTop = iframeDoc.body.scrollTop;
+            });
+
+            // 부모 페이지 스크롤 시 iframe도 동기화
+            window.addEventListener("scroll", function () {
+                iframeDoc.documentElement.scrollTop = document.documentElement.scrollTop;
+                iframeDoc.body.scrollTop = document.body.scrollTop;
+            });
+        });
+
+
+        // 네비게이션 클릭 이벤트 처리
+        navLinks.forEach(link => {
+            link.addEventListener("click", function (event) {
+                event.preventDefault(); // 기본 동작 방지
+
+                // 모든 링크에서 active 클래스 제거
+                navLinks.forEach(nav => nav.classList.remove("active"));
+
+                // 클릭한 링크에 active 클래스 추가
+                this.classList.add("active");
+
+                // 클릭된 링크의 텍스트에 따라 iframe src 변경
+                const page = this.textContent.toLowerCase(); // "discover", "browse", "news"
+                iframe.src = `${page}.html`;
+            });
+        });
+    });
+
+
+</script>
+</body>
+</html>

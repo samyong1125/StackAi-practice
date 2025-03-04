@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게임스토어</title>
+    <link rel="stylesheet" href="css/indexCss.css">
+</head>
+<body>
+<header>
+    <div class="logo_container">
+        <div class="logo"><a href="index.html" style="text-decoration: none; color: white;">GAME STORE</a></div>
+        <nav>
+            <a href="#">지원</a>
+            <a href="#">배포</a>
+        </nav>
+    </div>
+    <div id="header-button">
+        <label class="login-btn">
+            <a href="login.html" style="text-decoration: none; color: white;">로그인</a>
+        </label>
+    </div>
+</header>
+<div class="DBN_div">
+    <div class="DBN_header">
+        <div class="search-box">
+            🔍 <input type="text" placeholder="Search store">
+        </div>
+        <div class="DBN_nav_container">
+            <div class="DBN_nav">
+                <a href="#" class="active">Discover</a>
+                <a href="#">Browse</a>
+                <a href="#">News</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="iframe1" style="overflow: hidden;">
+    <iframe id="myIframe" src="discover.html" style="width: 100%; height: calc(100vh - 60px);"></iframe>
+</div>
+
+<script src="js/indexJs.js"></script>
+</body>
+</html>
