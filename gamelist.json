@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Kingdom Come:Deliverance 2",
+    "title": "지금 바로 플레이하세요!",
+    "src": "asdf/image/kingdom_header.jpg"
+  },
+  {
+    "name": "Spider Man 2",
+    "title": "스파이더맨 2를 PC에서 즐겨보세요!",
+    "src": "asdf/image/SPIDERMAN.jpg"
+  },
+  {
+    "name": "Monster Hunter Wilds",
+    "title": "몬스터 헌터 시리즈 신작",
+    "src": "asdf/image/MonsterHunterHeader.jpg"
+  },
+  {
+    "name": "Madden NFL 25",
+    "title": "새로운 시즌이 시작됩니다!",
+    "src": "asdf/image/madden nfl header.jpg"
+  },
+  {
+    "name": "CIVILIZATION VII",
+    "title": "문명 시리즈가 돌아왔습니다!",
+    "src": "asdf/image/CIVILIZATION.jpg"
+  }
+]
+
