@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.css">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"> 
-    
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
         body,
         html {
@@ -19,7 +19,7 @@
             background-color: #101014;
         }
 
-         .login-container {
+        .login-container {
             background-color: #18181c;
             width: 600px;
             height: 60%;
@@ -32,45 +32,48 @@
             flex-direction: column;
             text-align: center; */
 
-        } 
-        
+        }
+
 
         .title {
             text-align: center;
             margin-bottom: 60px;
         }
-        
+
         .textt {
             display: inline-block;
             /* span을 block처럼 다루기 */
             text-align: left;
             /* 텍스트 왼쪽 정렬 */
             margin-bottom: 5px;
-             /*텍스트와 입력 필드 간 간격 */
+            /*텍스트와 입력 필드 간 간격 */
             display: block;
             margin-bottom: 10px;
             margin-left: 50px;
         }
-        
+
         .textbox {
             width: 400px;
-            height: 30px;
+            height: 45px;
             border: none;
-            padding: 5px;
+            padding: 10px;
             border-radius: 20px;
             margin-bottom: 30px;
             margin-left: 50px;
+            background-color: #333;
+            color: #f0f0f0;
         }
-        
         .textbox2 {
             width: 400px;
-            height: 30px;
+            height: 45px;
             border: none;
-            padding: 5px;
+            padding: 10px;
             border-radius: 20px;
             margin-left: 50px;
+            background-color: #333;
+            color: #f0f0f0;
         }
-        
+
         .saveemail {
             margin-top: 15px;
             margin-left: 50px;
@@ -90,7 +93,7 @@
             list-style: none;
             text-align: center;
         }
-        
+
         #btn {
             width: 410px;
             padding: 12px;
@@ -104,11 +107,18 @@
             margin-top: 30px;
             margin-bottom: 30px;
         }
-        
+
+        /* 비활성화된 상태 버튼 스타일 */
+        #btn:disabled {
+            background-color: #dddddd68;
+            color: #aaa;
+            cursor: not-allowed;
+        }
+
         #btn:hover {
             background-color: #0036b3;
         }
-        
+
         @media (max-width: 480px) {
             .login-container {
                 width: 95%;
@@ -122,24 +132,21 @@
                 /* 더 작은 화면에서는 제목 크기 줄이기 */
             }
         }
-
     </style>
 </head>
 
 <body>
-
-
-
-
     <div class="login-container">
-        <h1 class="title">GAMESTORE</h1>
+        <h1 class="title">
+            <a href="index.html" style="color: #ffffff;">GAMESTORE</a>
+        </h1>
         <div class="login_tab">
             <form action="#" method="post" name="user_login" id="user_login">
                 <div class="login_box">
                     <div><span class="textt">이메일 주소</span>
                         <input type="text" name="email" title="이메일 주소 입력" class="textbox" id="email_address">
                     </div>
-                    <div><span class = textt>비밀번호</span>
+                    <div><span class=textt>비밀번호</span>
                         <input type="text" name="password" title="비밀번호 입력" class="textbox2" id="password">
                     </div>
 
@@ -147,7 +154,7 @@
                         <input type="checkbox" id="save_id" title="이메일 저장" name="remember_me">
                         <label for="save_id">이메일 저장</label>
                     </div>
-                    <input type="submit" class="black_btn" title="로그인 버튼" value="로그인" id="btn">
+                    <input type="submit" class="black_btn" title="로그인 버튼" value="로그인" id="btn" disabled>
                     <div class="text-center mt-3">
                         <a href="#">비밀번호를 잊으셨나요?</a>
                     </div>
@@ -155,11 +162,11 @@
                         <a href="signup.html" title="회원가입 " id="newcustomer">회원가입</a>
                     </ul>
                 </div>
-            </form>
         </div>
+        </form>
 
     </div>
-    <script src="js/login.js" defer></script>
+    <script src="login.js" defer></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.js"></script>
 </body>
