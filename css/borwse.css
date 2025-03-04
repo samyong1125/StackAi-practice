@@ -158,29 +158,6 @@ img, svg {
     transform: rotateY(0deg);
 }
 
-/*discover.css에서 가져옴*/
-.game-list1 {
-    display: flex;
-    gap: 15px;
-    overflow-x: hidden; /* 스크롤바 숨기기 */
-    padding: 20px;
-    scroll-behavior: smooth; /* 부드러운 스크롤 */
-    margin: 0 auto; /* 가로 중앙 정렬 */
-    max-width: 1300px; /* 최대 너비 설정 */
-}
-
-.game-item {
-    flex: 0 0 auto;
-    width: 200px; /* 고정 너비 유지 */
-    background-color: #1E1E1E;
-    padding: 10px;
-    border-radius: 20px;
-    text-align: center;
-    transition: transform 0.4s cubic-bezier(0.25, 0.45, 0.45, 1),
-    box-shadow 0.4s ease;
-    overflow: hidden;
-    will-change: transform, box-shadow;
-}
 
 /**************************************************************************/
 
@@ -396,21 +373,14 @@ img, svg {
 
 .browse-list{
     display: flex;
-    flex-wrap: wrap;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    width: 100%;
+    white-space: nowrap;
     gap: 15px;
     padding: 20px;
-    justify-content:left;
-    overflow-x: auto;
-    overflow: hidden;
+
 }
-
-.browse-list-temp{
-    position: relative;
-    width: 50%;
-}
-
-
-
 
 .browse-item{
     margin-left: 10px;

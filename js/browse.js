@@ -77,6 +77,28 @@ document.addEventListener('DOMContentLoaded',() => {
 
     });
 
+    const slide_box = document.getElementById("slide_box");
+    const slide_left_btn = document.getElementById("slide_left_btn");
+    const slide_right_btn = document.getElementById("slide_right_btn");
+    slide_left_btn.addEventListener("click", ()=> {
+
+        slide_box.scrollLeft -= slide_box.offsetWidth;
+
+    });
+    slide_right_btn.addEventListener("click", ()=> {
+       
+
+        slide_box.scrollLeft += slide_box.offsetWidth;
+
+    });
+
+    slide_box.addEventListener("wheel", (element) =>{
+        if (slide_box.focus) {
+            element.preventDefault();
+            slide_box.scrollLeft += element.deltaY * 10;
+        }
+    });
+
 });
     
 
