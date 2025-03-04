@@ -100,6 +100,10 @@ body {
     scroll-behavior: smooth;
     max-width: 1300px;
 }
+.game-list1 a {
+    color: white;
+    text-decoration: none;
+}
 .game-item {
     flex: 0 0 auto;
     width: 200px; /* 고정 너비 유지 */
