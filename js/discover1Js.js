@@ -30,6 +30,9 @@ const swiper2 = new Swiper('.game-list1', {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
+    nested: true, // 스와이프 내에서도 스크롤 가능하도록 설정
+    touchMoveStopPropagation: false,
+    touchReleaseOnEdges: true,
     breakpoints: {
         // 화면 너비가 320px 이상일 때
         500: {
