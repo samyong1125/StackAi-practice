@@ -1,72 +1,60 @@
-// 좌우 스크롤 차단을 위한 이벤트 리스너 추가
-document.addEventListener("touchmove", function(event) {
-    if (event.touches.length > 1 || event.scale !== 1) {
-        event.preventDefault(); // 멀티터치 및 확대/축소 방지
-    }
-}, { passive: false });
-
-// 스와이퍼 인스턴스 생성
 const swiper1 = new Swiper('.swiper1', {
     loop: true,
-    effect: 'creative',
+    effect: 'creative', // creative 효과 활성화
     creativeEffect: {
         prev: {
-            shadow: true,
-            translate: ['-120%', 0, -500],
+            shadow: true, // 이전 슬라이드에 그림자 효과 적용
+            translate: ['-120%', 0, -500], // 이전 슬라이드 이동 설정 (x, y, z)
         },
         next: {
-            shadow: true,
-            translate: ['120%', 0, -500],
+            shadow: true, // 다음 슬라이드에 그림자 효과 적용
+            translate: ['120%', 0, -500], // 다음 슬라이드 이동 설정 (x, y, z)
         },
-        shadowPerProgress: true,
-        progressMultiplier: 1,
+        shadowPerProgress: true, // 슬라이드 이동에 따라 그림자 강도 조정
+        progressMultiplier: 1, // 효과의 강도 조정 (기본값: 1)
     },
-    parallax: true,
-    speed: 800,
+    parallax: true, // parallax 효과 활성화
+    speed: 800, // 슬라이드 전환 속도 조정
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
     },
-    preventClicks: true, // 클릭 이벤트 방지
-    preventClicksPropagation: true, // 클릭 이벤트 전파 방지
 });
 
+// game-list1을 위한 새로운 Swiper 인스턴스 생성
 const swiper2 = new Swiper('.game-list1', {
     loop: false,
-    slidesPerView: 1,
-    spaceBetween: 15,
+    slidesPerView: 1, // 기본값: 한 번에 4개의 슬라이드 표시
+    spaceBetween: 15, // 슬라이드 간 간격
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
-    nested: true,
-    touchMoveStopPropagation: false,
-    touchReleaseOnEdges: true,
-    preventClicks: true, // 클릭 이벤트 방지
-    preventClicksPropagation: true, // 클릭 이벤트 전파 방지
     breakpoints: {
+        // 화면 너비가 320px 이상일 때
         500: {
-            slidesPerView: 2,
-            spaceBetween: 10,
+            slidesPerView: 2, // 한 번에 2개의 슬라이드 표시
+            spaceBetween: 10, // 슬라이드 간 간격 조정
         },
+        // 화면 너비가 480px 이상일 때
         750: {
-            slidesPerView: 3,
-            spaceBetween: 10,
+            slidesPerView: 3, // 한 번에 3개의 슬라이드 표시
+            spaceBetween: 10, // 슬라이드 간 간격 조정
         },
+        // 화면 너비가 768px 이상일 때
         1000: {
-            slidesPerView: 3,
-            spaceBetween: 15,
+            slidesPerView: 3, // 한 번에 4개의 슬라이드 표시
+            spaceBetween: 15, // 슬라이드 간 간격 조정
         },
+        // 화면 너비가 1024px 이상일 때
         1024: {
-            slidesPerView: 4,
-            spaceBetween: 15,
+            slidesPerView: 4, // 한 번에 5개의 슬라이드 표시
+            spaceBetween: 15, // 슬라이드 간 간격 조정
         },
     },
 });
-
-// 추가적인 스크롤 차단
-document.addEventListener('wheel', function(event) {
-    if (event.deltaX !== 0) {
-        event.preventDefault(); // 좌우 스크롤 차단
+document.addEventListener("touchmove", function(event) {
+    if (event.touches.length > 1 || event.changedTouches[0].clientX !== 0) {
+        event.preventDefault();
     }
 }, { passive: false });
