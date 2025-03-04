@@ -14,6 +14,10 @@ body {
     -webkit-overflow-scrolling: touch; /* 모바일에서 부드러운 스크롤 */
 }
 
+
+.swiper-container {
+    overflow: visible;
+}
 .swiper1 {
     border-radius: 20px;
     width: 80%; /* 너비 조정 */
