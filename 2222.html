@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #101014;
+        }
+
+        h1 {
+            text-align: center;
+            color: antiquewhite;
+        }
+
+        .s__done {
+            background-color: #18181c;
+            width: 590px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            box-sizing: border-box;
+            color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+
+        .s__done input[type="text"],
+        .s__done input[type="email"],
+        .s__done input[type="password"] {
+            width: 80%;
+            padding: 12px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            margin-left: 50px;
+            border-radius: 20px;
+            border: 1px solid #ddd;
+            background-color: #333;
+            color: antiquewhite;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        .s__done input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 20px;
+            font-size: 18px;
+            cursor: pointer;
+            width: 80%; /* 버튼을 텍스트 필드와 동일한 너비로 설정 */
+            display: block; /* display: block 속성 추가 */
+            margin: 20px auto 0; /* 가운데 정렬을 위한 margin 설정 */
+        }
+
+        .aaa {
+            float: left;
+            margin-left: 50px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            width: 100%; /* 전체 너비로 설정 */
+        }
+
+        @media screen and (max-width: 768px) {
+            body {
+                margin: 10px;
+            }
+
+            .s__done {
+                width: 90%;
+                max-width: none;
+                margin-top: 20px;
+                padding: 20px;
+            }
+
+            .s__done input[type="text"],
+            .s__done input[type="email"],
+            .s__done input[type="password"] {
+                width: 100%;
+                margin-left: 0;
+            }
+
+            .aaa {
+                float: none;
+                text-align: left;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .s__done {
+                width: 100%;
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .s__done input[type="text"],
+            .s__done input[type="email"],
+            .s__done input[type="password"] {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            .s__done input[type="submit"] {
+                font-size: 16px;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="checkbox-container">
+        <h1>회원가입</h1>
+    </div>
+
+    <form action="#" method="post" name="signup" class="s__done" id="s_done">
+        <div class="aaa"><span>성명</span></div>
+        <input type="text" name="name" title="성명" id="name">
+
+        <div class="aaa"><span>이메일 주소</span></div>
+        <input type="text" name="email" title="이메일 주소 입력" id="email_address">
+
+        <div class="aaa"><span>비밀번호</span></div>
+        <input type="text" name="password" title="비밀번호 입력" id="password">
+
+        <div class="aaa"><span>비밀번호확인</span></div>
+        <input type="text" name="password_check" title="비밀번호 확인" id="password_check">
+
+        <!-- 회원가입 버튼을 감싸는 div 추가 -->
+        <div class="button-container">
+            <input type="submit" class="black_btn" title="회원가입 버튼" value="회원가입 제출" id="btn">
+        </div>
+    </form>
+
+    <script src="../js/signup.js" defer></script>
+</body>
+
+</html>
