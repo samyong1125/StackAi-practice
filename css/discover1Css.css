@@ -175,7 +175,11 @@ body {
 }
 
 /* 추천 게임 박스 스타일 */
-/* 추천 게임 박스 스타일 */
+.TodayRecommend {
+    color: white;
+    margin-right: 50%;
+    margin-top: 30px;
+}
 .recommended-game {
     width: 80%;
     height: 550px;
