@@ -15,7 +15,7 @@
             <div class="slide_btns">
                 <div class="slide_btns_flex">
                     <div class="slide_btns_margin">
-                        <button class="slide_btns_design" aria-label="previous slide">
+                        <button class="slide_btns_design" id="slide_left_btn" aria-label="previous slide">
                             <span class="slide_btns_left" aria-hidden="true" data-testid="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="svg slide_btns_size" viewBox="0 0 5 9">
                                     <path stroke="currentColor" d="M1 1l3 3.5L1 8" fill="none" fill-rule="evenodd">
@@ -26,7 +26,7 @@
                         </button>
                     </div>
                     <div class="slide_btns_margin">
-                        <button class="slide_btns_design" aria-label="next slide">
+                        <button class="slide_btns_design" id="slide_right_btn" aria-label="next slide">
                             <span class="slide_btns_right" aria-hidden="true" data-testid="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="svg slide_btns_size" viewBox="0 0 5 9">
                                     <path stroke="currentColor" d="M1 1l3 3.5L1 8" fill="none" fill-rule="evenodd">
@@ -40,7 +40,127 @@
             </div>
         </div>
         
-        <div class="browse-list game-list1">
+        <div class="browse-list" id="slide_box">
+            <a href="">
+                <div class="game-item white_layer">
+                    <img src="resources/spiderman.avif" alt="">
+                    <p>
+                        Action Games
+                    </p>
+                </div>
+            </a>
+            <a href="">
+                <div class="game-item white_layer">
+                    <img src="resources/kingdomecome.avif" alt="">
+                    <p>
+                        Action Adventure Games
+                    </p>
+                </div>
+            </a>
+            <a href="">
+                <div class="game-item white_layer">
+                    <img src="resources/farcry6.webp" alt="">
+                    <p>
+                        Adventure Games
+                    </p>
+                </div>
+            </a>
+            <a href="">
+                <div class="game-item white_layer">
+                    <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
+                    <p>
+                        Casual Games
+                    </p>
+                </div>
+            </a>
+            <a href="">
+                <div class="game-item white_layer">
+                    <img src="resources/civilization7.avif" alt="">
+                    <p>
+                        City Builder Games
+                    </p>
+                </div>
+            </a>
+            <a href="">
+                <div class="game-item white_layer">
+                    <img src="resources/spiderman.avif" alt="">
+                    <p>
+                        Action Games
+                    </p>
+                </div>
+            </a>
+            <a href="">
+                <div class="game-item white_layer">
+                    <img src="resources/kingdomecome.avif" alt="">
+                    <p>
+                        Action Adventure Games
+                    </p>
+                </div>
+            </a>
+            <a href="">
+                <div class="game-item white_layer">
+                    <img src="resources/farcry6.webp" alt="">
+                    <p>
+                        Adventure Games
+                    </p>
+                </div>
+            </a>
+            <a href="">
+                <div class="game-item white_layer">
+                    <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
+                    <p>
+                        Casual Games
+                    </p>
+                </div>
+            </a>
+            <a href="">
+                <div class="game-item white_layer">
+                    <img src="resources/civilization7.avif" alt="">
+                    <p>
+                        City Builder Games
+                    </p>
+                </div>
+            </a>
+            <a href="">
+                <div class="game-item white_layer">
+                    <img src="resources/spiderman.avif" alt="">
+                    <p>
+                        Action Games
+                    </p>
+                </div>
+            </a>
+            <a href="">
+                <div class="game-item white_layer">
+                    <img src="resources/kingdomecome.avif" alt="">
+                    <p>
+                        Action Adventure Games
+                    </p>
+                </div>
+            </a>
+            <a href="">
+                <div class="game-item white_layer">
+                    <img src="resources/farcry6.webp" alt="">
+                    <p>
+                        Adventure Games
+                    </p>
+                </div>
+            </a>
+            <a href="">
+                <div class="game-item white_layer">
+                    <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
+                    <p>
+                        Casual Games
+                    </p>
+                </div>
+            </a>
+            <a href="">
+                <div class="game-item white_layer">
+                    <img src="resources/civilization7.avif" alt="">
+                    <p>
+                        City Builder Games
+                    </p>
+                </div>
+            </a>
             <a href="">
                 <div class="game-item white_layer">
                     <img src="resources/spiderman.avif" alt="">
@@ -332,10 +452,10 @@
             <div class="browse_section">
 
                 <!-- <div class="browse_section_fillter">
-                    <div>
+                    <span>
                         Show :
-                    </div>
-                    <div class="section_fillter">
+                    </span>
+                    <span class="section_fillter">
                         <button type="button" id="section_fillter_btn" class="section_fillter_btn">
                             <span>
                                 All
@@ -347,7 +467,7 @@
                                 </path>
                             </svg>
                         </button> 
-                    </div>
+                    </span>
                 </div> -->
 
                 <section class="browse_list_section">
@@ -355,7 +475,7 @@
                         <div class="browse-item">
                             
                             <div class="white_layer">
-                                <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">                            
+                                <img src="resources/civilization7.avif" alt="">                            
                             </div>
 
                             
@@ -364,7 +484,7 @@
                             </div>
 
                             <div class="browse-item-title">
-                                D ball
+                               문명 7
                             </div>
 
                             <div class="browse-item-price">
