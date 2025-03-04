@@ -1,14 +1,9 @@
-function fillter_reset() {
-    let all_Fillter_child = document.querySelectorAll(".fillter_item_child")
-
-    all_Fillter_child.forEach(element => {
-        element.style.display = "none";
-    });
-}
-
 document.addEventListener('DOMContentLoaded',() => {
 
+    const resetEvent = document.getElementById("fillter_reset_btn");    
     const fillter_select = document.querySelectorAll(".fillter_select");
+    
+    //선택된 필터에 화살표 추가 이벤트
     fillter_select.forEach(element => {
 
         const createArrow = document.createElement("span")
@@ -22,6 +17,7 @@ document.addEventListener('DOMContentLoaded',() => {
                 //화살표 생성
                 let newElement = element.appendChild(createArrow);
                 newElement.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="svg fillter_select_arrow" viewBox="0 0 10 8"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-320.000000, -202.000000)" stroke="currentColor" stroke-width="2"><polyline points="321 205.569101 323.596499 208 329 203"></polyline></g></g></svg>`;
+                resetEvent.style.display = "block";
             }else
             {
                 element.removeChild(createArrow)
@@ -30,7 +26,7 @@ document.addEventListener('DOMContentLoaded',() => {
         });
     });
 
-    //필터 오브젝트 이벤트 적용
+    //필터 숨기기 보이기 이벤트
     const child = document.querySelectorAll(".fillter_item")
     child.forEach(element => {
 
@@ -42,14 +38,15 @@ document.addEventListener('DOMContentLoaded',() => {
 
         fillter_btn.addEventListener("click",() =>{
            
-            //조건 점검해야함...
-            if (fillter_item_child.classList.length == 1) {
+            //스타일이 하나만 적용 되어있으면 hide_menu 스타일 적용하고 태그 추가
+            if (fillter_item_child.classList == "fillter_item_child") {
                 fillter_item_child.classList.add("hide_menu")
                 arrow.innerHTML = `<path d="M19.53 8.97a.75.75 0 0 1 0 1.06L12 17.56l-7.53-7.53a.75.75 0 1 1 1.06-1.06L12 15.44l6.47-6.47a.75.75 0 0 1 1.06 0" 
                                 clip-rule="evenodd" fill-rule="evenodd">
 
                                 </path>`;
             }else{
+                //heide_menu 스타일이 적용되어있으면 스타일 제거
                 fillter_item_child.classList.remove("hide_menu")
                 arrow.innerHTML = `<path d="m12 6.44 7.53 7.53a.75.75 0 1 1-1.06 1.06L12 8.562l-6.47 6.47a.75.75 0 0 1-1.06-1.06z" 
                                 clip-rule="evenodd" fill-rule="evenodd">
@@ -59,10 +56,28 @@ document.addEventListener('DOMContentLoaded',() => {
               
         });
 
-        
+    });
+
+
+    //필터 리셋버튼 이벤트
+    resetEvent.addEventListener("click", () => {
+
+        //화살표 삭제
+        fillter_select.forEach(element => {
+            const createArrow = element.querySelector(".fillter_select_arrow");
+            
+            if (createArrow != null) {
+                createArrow.remove()
+                element.classList.remove("fillter_select_event");
+            }
+            
+        });
+
+        resetEvent.style.display = "none";
 
     });
 
+});
     
 
 
@@ -73,9 +88,3 @@ document.addEventListener('DOMContentLoaded',() => {
 
     // });
     
-
-
-
-
-
-});
