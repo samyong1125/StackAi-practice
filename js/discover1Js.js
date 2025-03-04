@@ -53,8 +53,8 @@ const swiper2 = new Swiper('.game-list1', {
         },
     },
 });
-// document.addEventListener("touchmove", function(event) {
-//     if (event.touches.length > 1 || event.changedTouches[0].clientX !== 0) {
-//         event.preventDefault();
-//     }
-// }, { passive: false });
+document.addEventListener("touchmove", function(event) {
+    if (event.touches.length > 1 || event.changedTouches[0].clientX !== 0) {
+        event.preventDefault();
+    }
+}, { passive: false });
