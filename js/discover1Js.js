@@ -27,6 +27,8 @@ const swiper1 = new Swiper('.swiper1', {
         el: '.swiper-pagination',
         clickable: true,
     },
+    preventClicks: true, // 클릭 이벤트 방지
+    preventClicksPropagation: true, // 클릭 이벤트 전파 방지
 });
 
 const swiper2 = new Swiper('.game-list1', {
@@ -40,6 +42,8 @@ const swiper2 = new Swiper('.game-list1', {
     nested: true,
     touchMoveStopPropagation: false,
     touchReleaseOnEdges: true,
+    preventClicks: true, // 클릭 이벤트 방지
+    preventClicksPropagation: true, // 클릭 이벤트 전파 방지
     breakpoints: {
         500: {
             slidesPerView: 2,
@@ -59,3 +63,10 @@ const swiper2 = new Swiper('.game-list1', {
         },
     },
 });
+
+// 추가적인 스크롤 차단
+document.addEventListener('wheel', function(event) {
+    if (event.deltaX !== 0) {
+        event.preventDefault(); // 좌우 스크롤 차단
+    }
+}, { passive: false });
