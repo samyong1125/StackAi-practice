@@ -178,11 +178,18 @@ html, body {
     -webkit-overflow-scrolling: touch; /* 모바일 부드러운 스크롤 */
 }
 
-.swiper-container {
-    overflow: hidden; /* Swiper가 영역을 벗어나지 않도록 설정 */
-    width: 100%;
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 20px 0;
+    overflow-y: auto;
+    overflow-x: hidden; /* 추가적인 좌우 스크롤 차단 */
+    -webkit-overflow-scrolling: touch; /* 모바일에서 부드러운 스크롤 */
 }
 
-.game-list1 {
-    overflow-x: hidden; /* 추가적인 좌우 스크롤 차단 */
+.swiper-container, .game-list1 {
+    overflow-x: hidden; /* Swiper가 영역을 벗어나지 않도록 설정 */
+    width: 100%;
 }
