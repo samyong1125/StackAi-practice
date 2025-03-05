@@ -127,6 +127,6 @@ signsubmit.addEventListener("submit", (event) => {
 
   setTimeout(function () {
     // 로그인.HTML로 2초 뒤에 이동함.
-    location.href = "login.html";
+    window.location.href = "login.html";
   }, 2000);
 });
