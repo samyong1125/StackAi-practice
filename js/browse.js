@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded',() => {
 
     const resetEvent = document.getElementById("fillter_reset_btn");    
     const fillter_select = document.querySelectorAll(".fillter_select");
-    
+    let count = 0;
     //선택된 필터에 화살표 추가 이벤트
     fillter_select.forEach(element => {
 
@@ -18,11 +18,18 @@ document.addEventListener('DOMContentLoaded',() => {
                 let newElement = element.appendChild(createArrow);
                 newElement.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="svg fillter_select_arrow" viewBox="0 0 10 8"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-320.000000, -202.000000)" stroke="currentColor" stroke-width="2"><polyline points="321 205.569101 323.596499 208 329 203"></polyline></g></g></svg>`;
                 resetEvent.style.display = "block";
+
+                ++count;
             }else
             {
                 element.removeChild(createArrow)
                 element.classList.remove("fillter_select_event");
+                --count;
+                if (count == 0) {
+                    resetEvent.style.display = "none";
+                }
             }
+
         });
     });
 
@@ -72,7 +79,7 @@ document.addEventListener('DOMContentLoaded',() => {
             }
             
         });
-
+        count=0;
         resetEvent.style.display = "none";
 
     });
@@ -138,4 +145,6 @@ document.addEventListener('DOMContentLoaded',() => {
 
         
     // });
+
+    
 });

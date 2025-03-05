@@ -439,11 +439,13 @@ img, svg {
     height: 100%;
     background: rgba(255, 255, 255, 0); /* 초기에는 투명 */
     transition: background 0.3s ease-in-out;
+    border-radius: 10px;
 }
 
 .white_layer:hover::after {
     background: rgba(255, 255, 255, 0.1); /* 흰색 반투명 */
     transform: scale(1.1);
+    border-radius: 10px;
 }
 
 .browse-item-type{
