@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7dc8b3ca-1d26-451c-9e3e-2688d47164eb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/asdf/image/筌뤣딅뮞_怨좊퓙______깆グ 1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/asdf/image/monhun1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/筌뤣딅뮞_怨좊퓙______깆グ 2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/asdf/image/monhun2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/筌뤣딅뮞_怨좊퓙______깆グ 3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/asdf/image/monhun3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/筌뤣딅뮞_怨좊퓙______깆グ 4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/asdf/image/monhun4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/筌뤣딅뮞_怨좊퓙______깆グ 5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/asdf/image/monhun5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/image/筌뤣딅뮞_怨좊퓙______깆グ header.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/asdf/image/monhunheader.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/monhun_wilds.html" beforeDir="false" afterPath="$PROJECT_DIR$/asdf/monhun_wilds.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discover.html" beforeDir="false" afterPath="$PROJECT_DIR$/discover.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discover1.html" beforeDir="false" afterPath="$PROJECT_DIR$/discover1.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,10 +29,12 @@
   "keyToString": {
     "JavaScript Debug.index.html.executor": "Debug",
     "JavaScript 디버그.index.html.executor": "Debug",
+    "JavaScript 디버그.monhun_wilds.html.executor": "Run",
     "JavaScript 디버그.spiderman2.html.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "dart.analysis.tool.window.visible": "false",
+    "deletionFromPopupRequiresConfirmation": "false",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/KB/Documents/GitHub/StackAi-practice",
@@ -54,22 +52,10 @@
       <recent name="C:\Users\KB\Documents\GitHub\StackAi-practice" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript 디버그.monhun_wilds.html">
+  <component name="RunManager">
     <configuration name="index.html" type="JavascriptDebugType" nameIsGenerated="true" uri="http://localhost:63342/StackAi-practice/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="monhun_wilds.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/signup.js/asdf/monhun_wilds.html" useBuiltInWebServerPort="true">
-      <method v="2" />
-    </configuration>
-    <configuration name="spiderman2.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/signup.js/asdf/spiderman2.html" useBuiltInWebServerPort="true">
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JavaScript 디버그.monhun_wilds.html" />
-        <item itemvalue="JavaScript 디버그.spiderman2.html" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -92,7 +78,7 @@
       <workItem from="1741140241122" duration="29000" />
       <workItem from="1741151058260" duration="1472000" />
       <workItem from="1741153337170" duration="1376000" />
-      <workItem from="1741154846373" duration="718000" />
+      <workItem from="1741154846373" duration="1021000" />
     </task>
     <servers />
   </component>
