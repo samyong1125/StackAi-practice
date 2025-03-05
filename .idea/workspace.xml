@@ -53,10 +53,18 @@
       <recent name="C:\Users\KB\Documents\GitHub\StackAi-practice" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JavaScript 디버그.spiderman2.html">
     <configuration name="index.html" type="JavascriptDebugType" nameIsGenerated="true" uri="http://localhost:63342/StackAi-practice/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
+    <configuration name="spiderman2.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/signup.js/asdf/spiderman2.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript 디버그.spiderman2.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
