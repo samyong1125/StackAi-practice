@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7dc8b3ca-1d26-451c-9e3e-2688d47164eb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asdf/image/_ㅽ뙆_대뜑留_ 1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/asdf/image/spiderman2_1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asdf/image/_ㅽ뙆_대뜑留_ 2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/asdf/image/spiderman2_2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asdf/image/_ㅽ뙆_대뜑留_ 3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/asdf/image/spiderman2_3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asdf/image/_ㅽ뙆_대뜑留_ 4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/asdf/image/spiderman2_4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asdf/image/_ㅽ뙆_대뜑留_ 5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/asdf/image/spiderman2_5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asdf/spiderman2.html" beforeDir="false" afterPath="$PROJECT_DIR$/asdf/spiderman2.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +77,8 @@
       <workItem from="1741065868451" duration="7136000" />
       <workItem from="1741132872683" duration="4323000" />
       <workItem from="1741140241122" duration="29000" />
+      <workItem from="1741151058260" duration="1472000" />
+      <workItem from="1741153337170" duration="1376000" />
     </task>
     <servers />
   </component>
