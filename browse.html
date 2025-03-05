@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Browse</title>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
     <link rel="stylesheet" href="css/borwse.css">
 </head>
 <body>
@@ -14,7 +18,7 @@
             </div>
             <div class="slide_btns">
                 <div class="slide_btns_flex">
-                    <div class="slide_btns_margin">
+                    <div class="slide_btns_margin button-next">
                         <button class="slide_btns_design" id="slide_left_btn" aria-label="previous slide">
                             <span class="slide_btns_left" aria-hidden="true" data-testid="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="svg slide_btns_size" viewBox="0 0 5 9">
@@ -25,7 +29,7 @@
                             </span>
                         </button>
                     </div>
-                    <div class="slide_btns_margin">
+                    <div class="slide_btns_margin button-prev">
                         <button class="slide_btns_design" id="slide_right_btn" aria-label="next slide">
                             <span class="slide_btns_right" aria-hidden="true" data-testid="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="svg slide_btns_size" viewBox="0 0 5 9">
@@ -39,172 +43,353 @@
                 </div>
             </div>
         </div>
-        
-        <div class="browse-list" id="slide_box">
-            <a href="">
-                <div class="game-item white_layer">
-                    <img src="resources/spiderman.avif" alt="">
-                    <p>
-                        Action Games
-                    </p>
-                </div>
-            </a>
-            <a href="">
-                <div class="game-item white_layer">
-                    <img src="resources/kingdomecome.avif" alt="">
-                    <p>
-                        Action Adventure Games
-                    </p>
-                </div>
-            </a>
-            <a href="">
-                <div class="game-item white_layer">
-                    <img src="resources/farcry6.webp" alt="">
-                    <p>
-                        Adventure Games
-                    </p>
-                </div>
-            </a>
-            <a href="">
-                <div class="game-item white_layer">
-                    <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
-                    <p>
-                        Casual Games
-                    </p>
-                </div>
-            </a>
-            <a href="">
-                <div class="game-item white_layer">
-                    <img src="resources/civilization7.avif" alt="">
-                    <p>
-                        City Builder Games
-                    </p>
-                </div>
-            </a>
-            <a href="">
-                <div class="game-item white_layer">
-                    <img src="resources/spiderman.avif" alt="">
-                    <p>
-                        Action Games
-                    </p>
-                </div>
-            </a>
-            <a href="">
-                <div class="game-item white_layer">
-                    <img src="resources/kingdomecome.avif" alt="">
-                    <p>
-                        Action Adventure Games
-                    </p>
-                </div>
-            </a>
-            <a href="">
-                <div class="game-item white_layer">
-                    <img src="resources/farcry6.webp" alt="">
-                    <p>
-                        Adventure Games
-                    </p>
-                </div>
-            </a>
-            <a href="">
-                <div class="game-item white_layer">
-                    <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
-                    <p>
-                        Casual Games
-                    </p>
-                </div>
-            </a>
-            <a href="">
-                <div class="game-item white_layer">
-                    <img src="resources/civilization7.avif" alt="">
-                    <p>
-                        City Builder Games
-                    </p>
-                </div>
-            </a>
-            <a href="">
-                <div class="game-item white_layer">
-                    <img src="resources/spiderman.avif" alt="">
-                    <p>
-                        Action Games
-                    </p>
-                </div>
-            </a>
-            <a href="">
-                <div class="game-item white_layer">
-                    <img src="resources/kingdomecome.avif" alt="">
-                    <p>
-                        Action Adventure Games
-                    </p>
-                </div>
-            </a>
-            <a href="">
-                <div class="game-item white_layer">
-                    <img src="resources/farcry6.webp" alt="">
-                    <p>
-                        Adventure Games
-                    </p>
-                </div>
-            </a>
-            <a href="">
-                <div class="game-item white_layer">
-                    <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
-                    <p>
-                        Casual Games
-                    </p>
-                </div>
-            </a>
-            <a href="">
-                <div class="game-item white_layer">
-                    <img src="resources/civilization7.avif" alt="">
-                    <p>
-                        City Builder Games
-                    </p>
-                </div>
-            </a>
-            <a href="">
-                <div class="game-item white_layer">
-                    <img src="resources/spiderman.avif" alt="">
-                    <p>
-                        Action Games
-                    </p>
-                </div>
-            </a>
-            <a href="">
-                <div class="game-item white_layer">
-                    <img src="resources/kingdomecome.avif" alt="">
-                    <p>
-                        Action Adventure Games
-                    </p>
-                </div>
-            </a>
-            <a href="">
-                <div class="game-item white_layer">
-                    <img src="resources/farcry6.webp" alt="">
-                    <p>
-                        Adventure Games
-                    </p>
-                </div>
-            </a>
-            <a href="">
-                <div class="game-item white_layer">
-                    <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
-                    <p>
-                        Casual Games
-                    </p>
-                </div>
-            </a>
-            <a href="">
-                <div class="game-item white_layer">
-                    <img src="resources/civilization7.avif" alt="">
-                    <p>
-                        City Builder Games
-                    </p>
-                </div>
-            </a>
+        <div class="swiper mySwiper">
+            <div class="browse-list swiper-wrapper" id="slide_box">
+
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer ">
+                        <img src="resources/spiderman.avif" alt="">
+                        <p>
+                            Action Games
+                        </p>
+                    </div>
+                </a>
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="resources/kingdomecome.avif" alt="">
+                        <p>
+                            Action Adventure Games
+                        </p>
+                    </div>
+                </a>
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="resources/farcry6.webp" alt="">
+                        <p>
+                            Adventure Games
+                        </p>
+                    </div>
+                </a>
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
+                        <p>
+                            Casual Games
+                        </p>
+                    </div>
+                </a>
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="resources/civilization7.avif" alt="">
+                        <p>
+                            City Builder Games
+                        </p>
+                    </div>
+                </a>
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="resources/spiderman.avif" alt="">
+                        <p>
+                            Co-Op Games
+                        </p>
+                    </div>
+                </a>
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="resources/kingdomecome.avif" alt="">
+                        <p>
+                            Cross Platform Games
+                        </p>
+                    </div>
+                </a>
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="resources/farcry6.webp" alt="">
+                        <p>
+                            Dungeon Crawler Games
+                        </p>
+                    </div>
+                </a>
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
+                        <p>
+                            Exploration Games
+                        </p>
+                    </div>
+                </a>
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="resources/civilization7.avif" alt="">
+                        <p>
+                            Fantasy Games
+                        </p>
+                    </div>
+                </a>
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="resources/spiderman.avif" alt="">
+                        <p>
+                            Fighting Games
+                        </p>
+                    </div>
+                </a>
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="resources/kingdomecome.avif" alt="">
+                        <p>
+                            Horror Games
+                        </p>
+                    </div>
+                </a>
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="resources/farcry6.webp" alt="">
+                        <p>
+                            Indie Games
+                        </p>
+                    </div>
+                </a>
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
+                        <p>
+                            Mac Games
+                        </p>
+                    </div>
+                </a>
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="resources/civilization7.avif" alt="">
+                        <p>
+                            MMO Games
+                        </p>
+                    </div>
+                </a>
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="resources/spiderman.avif" alt="">
+                        <p>
+                            Multiplayer Games
+                        </p>
+                    </div>
+                </a>
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="resources/kingdomecome.avif" alt="">
+                        <p>
+                            Music Games
+                        </p>
+                    </div>
+                </a>
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="resources/farcry6.webp" alt="">
+                        <p>
+                            Open World Games
+                        </p>
+                    </div>
+                </a>
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
+                        <p>
+                            Party Games
+                        </p>
+                    </div>
+                </a>
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="resources/civilization7.avif" alt="">
+                        <p>
+                            Platformer Games
+                        </p>
+                    </div>
+                </a>
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="resources/civilization7.avif" alt="">
+                        <p>
+                            Puzzle Games
+                        </p>
+                    </div>
+                </a>
+                
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="resources/civilization7.avif" alt="">
+                        <p>
+                            Racing Games
+                        </p>
+                    </div>
+                </a>
+
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="resources/civilization7.avif" alt="">
+                        <p>
+                            Retro Games
+                        </p>
+                    </div>
+                </a>
+
+
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="resources/civilization7.avif" alt="">
+                        <p>
+                            Rogue-Lite Games
+                        </p>
+                    </div>
+                </a>
+
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="resources/civilization7.avif" alt="">
+                        <p>
+                            RPG Games
+                        </p>
+                    </div>
+                </a>
+
+
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="resources/civilization7.avif" alt="">
+                        <p>
+                            RTS Games
+                        </p>
+                    </div>
+                </a>
+
+
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="resources/civilization7.avif" alt="">
+                        <p>
+                            Shooter Games
+                        </p>
+                    </div>
+                </a>
+
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="resources/civilization7.avif" alt="">
+                        <p>
+                            Simulation Games
+                        </p>
+                    </div>
+                </a>
+
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="resources/civilization7.avif" alt="">
+                        <p>
+                            Space Games
+                        </p>
+                    </div>
+                </a>
+
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="resources/civilization7.avif" alt="">
+                        <p>
+                            Sports Games
+                        </p>
+                    </div>
+                </a>
+
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="resources/civilization7.avif" alt="">
+                        <p>
+                            Stealth Games
+                        </p>
+                    </div>
+                </a>
+
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="resources/civilization7.avif" alt="">
+                        <p>
+                            Stractegy Games
+                        </p>
+                    </div>
+                </a>
+
+
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="resources/civilization7.avif" alt="">
+                        <p>
+                            Survival Games
+                        </p>
+                    </div>
+                </a>
+
+
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="resources/civilization7.avif" alt="">
+                        <p>
+                            Tower Defense Games
+                        </p>
+                    </div>
+                </a>
+
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="resources/civilization7.avif" alt="">
+                        <p>
+                            Trivia Games
+                        </p>
+                    </div>
+                </a>
+
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="resources/civilization7.avif" alt="">
+                        <p>
+                            Turn Based Games
+                        </p>
+                    </div>
+                </a>
+
+
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="resources/civilization7.avif" alt="">
+                        <p>
+                            Turn Based Strategy Games
+                        </p>
+                    </div>
+                </a>
+
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="resources/civilization7.avif" alt="">
+                        <p>
+                            VR Games
+                        </p>
+                    </div>
+                </a>
+
+
+                <a href="" class="swiper-slide">
+                    <div class="game-item white_layer">
+                        <img src="resources/civilization7.avif" alt="">
+                        <p>
+                            Windows Games
+                        </p>
+                    </div>
+                </a>
+
+            </div>
         </div>
-
-
+        
+<hr>
         <div class="browse_main">
+            
             <aside class="browse_fillter">
 
                 <div class="fillter_top">
@@ -484,11 +669,11 @@
                             </div>
 
                             <div class="browse-item-title">
-                               문명 7
+                               Civilization7
                             </div>
 
                             <div class="browse-item-price">
-                                ￦45,000
+                                ￦65,000
                             </div>
 
                         
@@ -500,7 +685,7 @@
                         <div class="browse-item">
                             
                             <div class="white_layer">
-                            <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
+                            <img src="resources/farcry6.webp" alt="">
                             
                             </div>
                             
@@ -509,11 +694,11 @@
                             </div>
 
                             <div class="browse-item-title">
-                                D ball
+                                Farcry6
                             </div>
 
                             <div class="browse-item-price">
-                                ￦45,000
+                                ￦65,000
                             </div>
 
                         
@@ -525,7 +710,7 @@
                         <div class="browse-item">
                             
                             <div class="white_layer">
-                            <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
+                            <img src="resources/EGS_FootballManager2024.avif" alt="">
                             
                             </div>
                             
@@ -534,111 +719,11 @@
                             </div>
 
                             <div class="browse-item-title">
-                                D ball
+                                FootballManager 2024
                             </div>
 
                             <div class="browse-item-price">
-                                ￦45,000
-                            </div>
-
-                        
-                        </div>
-                    </a>
-
-
-
-                    <a href="">
-                        <div class="browse-item">
-                            
-                            <div class="white_layer">
-                            <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
-                            
-                            </div>
-                            
-                            <div class="browse-item-type">
-                                base Games
-                            </div>
-
-                            <div class="browse-item-title">
-                                D ball
-                            </div>
-
-                            <div class="browse-item-price">
-                                ￦45,000
-                            </div>
-
-                        
-                        </div>
-                    </a>
-
-                    <a href="">
-                        <div class="browse-item">
-                            
-                            <div class="white_layer">
-                            <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
-                            
-                            </div>
-                            
-                            <div class="browse-item-type">
-                                base Games
-                            </div>
-
-                            <div class="browse-item-title">
-                                D ball
-                            </div>
-
-                            <div class="browse-item-price">
-                                ￦45,000
-                            </div>
-
-                        
-                        </div>
-                    </a>
-
-
-                    <a href="">
-                        <div class="browse-item">
-                            
-                            <div class="white_layer">
-                            <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
-                            
-                            </div>
-                            
-                            <div class="browse-item-type">
-                                base Games
-                            </div>
-
-                            <div class="browse-item-title">
-                                D ball
-                            </div>
-
-                            <div class="browse-item-price">
-                                ￦45,000
-                            </div>
-
-                        
-                        </div>
-                    </a>
-
-
-                    <a href="">
-                        <div class="browse-item">
-                            
-                            <div class="white_layer">
-                            <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
-                            
-                            </div>
-                            
-                            <div class="browse-item-type">
-                                base Games
-                            </div>
-
-                            <div class="browse-item-title">
-                                D ball
-                            </div>
-
-                            <div class="browse-item-price">
-                                ￦45,000
+                                ￦59,000
                             </div>
 
                         
@@ -651,7 +736,7 @@
                         <div class="browse-item">
                             
                             <div class="white_layer">
-                            <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
+                            <img src="resources/GTAV_EGS.avif" alt="">
                             
                             </div>
                             
@@ -660,11 +745,35 @@
                             </div>
 
                             <div class="browse-item-title">
-                                D ball
+                                GTA 5
                             </div>
 
                             <div class="browse-item-price">
-                                ￦45,000
+                                ￦36,700
+                            </div>
+
+                        
+                        </div>
+                    </a>
+
+                    <a href="">
+                        <div class="browse-item">
+                            
+                            <div class="white_layer">
+                            <img src="resources/kingdomecome.jpg" alt="">
+                            
+                            </div>
+                            
+                            <div class="browse-item-type">
+                                base Games
+                            </div>
+
+                            <div class="browse-item-title">
+                                Kingdom Come: Deliverance II
+                            </div>
+
+                            <div class="browse-item-price">
+                                ₩60,800
                             </div>
 
                         
@@ -676,7 +785,7 @@
                         <div class="browse-item">
                             
                             <div class="white_layer">
-                            <img src="https://cdn1.epicgames.com/spt-assets/ece16ad799e445d0b84b80035d7a7009/dball-1ujvg.jpg?resize=1&w=360&h=480&quality=medium" alt="">
+                            <img src="resources/spiderman.jpg" alt="">
                             
                             </div>
                             
@@ -685,18 +794,16 @@
                             </div>
 
                             <div class="browse-item-title">
-                                D ball
+                                Spider-Man 2
                             </div>
 
                             <div class="browse-item-price">
-                                ￦45,000
+                                ￦62,800
                             </div>
 
                         
                         </div>
                     </a>
-                 
-                    
                     
                 </section>
 
@@ -718,6 +825,23 @@
 
     </div>
 
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/browse.js"></script>
+    <script>
+            let swiper = new Swiper(".mySwiper", {
+        slidesPerView: 5,
+        spaceBetween: 0,
+        loop: true,
+        pagination: {                
+          clickable: true,          
+        },      
+        navigation: {
+        nextEl: ".button-next",
+        prevEl: ".button-prev",
+      },
+      });
+    </script>
+
 </body>
 </html>

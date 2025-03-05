@@ -77,36 +77,65 @@ document.addEventListener('DOMContentLoaded',() => {
 
     });
 
-    const slide_box = document.getElementById("slide_box");
-    const slide_left_btn = document.getElementById("slide_left_btn");
-    const slide_right_btn = document.getElementById("slide_right_btn");
-    slide_left_btn.addEventListener("click", ()=> {
+    // const slide_box = document.getElementById("slide_box");
+    // const slide_left_btn = document.getElementById("slide_left_btn");
+    // const slide_right_btn = document.getElementById("slide_right_btn");
+    // slide_left_btn.addEventListener("click", ()=> {
 
-        slide_box.scrollLeft -= slide_box.offsetWidth;
-
-    });
-    slide_right_btn.addEventListener("click", ()=> {
-       
-
-        slide_box.scrollLeft += slide_box.offsetWidth;
-
-    });
-
-    slide_box.addEventListener("wheel", (element) =>{
-        if (slide_box.focus) {
-            element.preventDefault();
-            slide_box.scrollLeft += element.deltaY * 10;
-        }
-    });
-
-});
-    
-
-
-    // document.getElementById("section_fillter_btn").addEventListener("click",(element) =>{
-    //     console.log(element)
-        
-
+    //     slide_box.scrollLeft -= slide_box.offsetWidth;
 
     // });
-    
+    // slide_right_btn.addEventListener("click", ()=> {
+       
+
+    //     slide_box.scrollLeft += slide_box.offsetWidth;
+
+    // });
+
+    // slide_box.addEventListener("wheel", (element) =>{
+    //     if (slide_box.focus) {
+    //         element.preventDefault();
+    //         slide_box.scrollLeft += element.deltaY * 10;
+    //     }
+    // });
+
+
+    // slide_box.addEventListener("click", (element) =>{
+
+    // })
+
+
+    // let isDown = false;
+    // let startX;
+    // let scrollLeft;
+
+    // slide_box.addEventListener("mousedown", (e) => {
+    //     isDown = true;
+        
+    //     startX = e.pageX - slide_box.offsetLeft;
+    //     scrollLeft = slide_box.scrollLeft;
+        
+    // });
+
+    // slide_box.addEventListener("mouseleave", () => {
+    //     isDown = false;
+       
+    // });
+
+    // slide_box.addEventListener("mouseup", () => {
+    //     isDown = false;
+        
+    // });
+
+    // slide_box.addEventListener("mousemove", (e) => {
+        
+        
+    //     if (!isDown) return;
+    //     e.preventDefault();
+    //     const x = e.pageX - slide_box.offsetLeft;
+    //     const walk = (x - startX) * 2; // 이동 거리 조정
+    //     slide_box.scrollLeft = scrollLeft - walk;
+
+        
+    // });
+});
