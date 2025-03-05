@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded',() => {
             }
             
         });
-
+        count=0;
         resetEvent.style.display = "none";
 
     });
