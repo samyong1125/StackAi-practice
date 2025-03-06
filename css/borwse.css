@@ -339,16 +339,6 @@ img, svg {
     fill: white;
 }
 
-.hide_menu{
-    display: none;
-}
-
-.show_menu{
-    display: block;
-}
-
-
-
 
 /*content box 구현*/
 .browse_section{
@@ -403,6 +393,7 @@ img, svg {
 
 .browse-item{
     margin-left: 10px;
+    display: block;
 }
 
 
@@ -467,6 +458,10 @@ img, svg {
     padding-top: 10px;
 }
 
+.browse-item-Genres{
+    display: none;
+}
+
 
 /*하단 네비게이션 css*/
 .pagination_navigation{
@@ -482,4 +477,13 @@ img, svg {
     width: 30px;
     display: flex;
     justify-content: center;
+}
+
+
+.hide_menu{
+    display: none;
+}
+
+.show_menu{
+    display: block;
 }

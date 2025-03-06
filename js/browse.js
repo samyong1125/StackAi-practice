@@ -1,8 +1,65 @@
+
+let select_Fillter_array = new Array();
+
+function showHideContent(browse_items = new Array) {
+
+    if(select_Fillter_array.length == 0){
+        browse_items.forEach(item => {
+            item.classList.remove("hide_menu")
+            item.classList.add("show_menu")
+        });
+
+        return;
+    }
+
+    
+    browse_items.forEach(item => {
+        let check = 0;
+        //게임 장르 추출
+        const Genres = item.querySelector(".browse-item-Genres").innerText;
+        const Genres_spl = Genres.split(",");
+
+        //등록된 장르와 필터에 선택된 장르가 하나라도 같으면 check = 1
+        for (let i = 0; i < Genres_spl.length; i++) {
+            const e = Genres_spl[i];
+            for (let j = 0; j < select_Fillter_array.length; j++) {
+                const e2 = String(select_Fillter_array[j]);
+
+                
+                if (e == e2) {
+                    
+                    check = 1;
+                    break;
+                }                            
+            }
+
+            
+        }
+
+            if (check == 1) {
+                item.classList.remove("hide_menu")
+                item.classList.add("show_menu")
+                
+            }
+            else{
+                item.classList.remove("show_menu")
+                item.classList.add("hide_menu")
+            }
+            
+    });
+                
+}
+
+
 document.addEventListener('DOMContentLoaded',() => {
 
+
+    const browse_items = document.querySelectorAll(".browse-item");
     const resetEvent = document.getElementById("fillter_reset_btn");    
     const fillter_select = document.querySelectorAll(".fillter_select");
     let count = 0;
+
+
     //선택된 필터에 화살표 추가 이벤트
     fillter_select.forEach(element => {
 
@@ -10,6 +67,10 @@ document.addEventListener('DOMContentLoaded',() => {
 
         element.addEventListener("click", ()=>{
             
+
+            const fillter_property = element.querySelector(".fillter_property").innerText;
+
+
             if (element.className == "fillter_select") {
                 //바탕 색 추가
                 element.classList.add("fillter_select_event");
@@ -18,8 +79,13 @@ document.addEventListener('DOMContentLoaded',() => {
                 let newElement = element.appendChild(createArrow);
                 newElement.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="svg fillter_select_arrow" viewBox="0 0 10 8"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-320.000000, -202.000000)" stroke="currentColor" stroke-width="2"><polyline points="321 205.569101 323.596499 208 329 203"></polyline></g></g></svg>`;
                 resetEvent.style.display = "block";
-
                 ++count;
+                
+
+                select_Fillter_array.push(fillter_property);
+
+                
+                
             }else
             {
                 element.removeChild(createArrow)
@@ -28,8 +94,14 @@ document.addEventListener('DOMContentLoaded',() => {
                 if (count == 0) {
                     resetEvent.style.display = "none";
                 }
+
+
+                select_Fillter_array = select_Fillter_array.filter((e) => e !== fillter_property);
             }
 
+            showHideContent(browse_items);
+
+            
         });
     });
 
@@ -83,6 +155,10 @@ document.addEventListener('DOMContentLoaded',() => {
         resetEvent.style.display = "none";
 
     });
+
+
+
+
 
     // const slide_box = document.getElementById("slide_box");
     // const slide_left_btn = document.getElementById("slide_left_btn");
