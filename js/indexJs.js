@@ -84,6 +84,27 @@ window.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // 검색 기능 추가
+    const searchBox = document.querySelector(".search-box input");
+    searchBox.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+            const searchTerm = searchBox.value.trim();
+            if (searchTerm) {
+                fetch("search.json")
+                    .then(response => response.json())
+                    .then(data => {
+                        const foundItem = data.find(item => item.name.toLowerCase() === searchTerm.toLowerCase());
+                        if (foundItem) {
+                            iframe.src = foundItem.src;
+                        } else {
+                            alert("검색 결과가 없습니다.");
+                        }
+                    })
+                    .catch(error => console.error("Error fetching search data:", error));
+            }
+        }
+    });
+
     window.addEventListener("resize", function () {
         const iframe = document.getElementById("myIframe");
 
@@ -101,6 +122,7 @@ window.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
 function a() {
     const iframe = document.getElementById("myIframe");
 
@@ -118,4 +140,4 @@ function a() {
     }
 }
 
-a()
+a();
