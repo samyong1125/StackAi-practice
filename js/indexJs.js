@@ -101,8 +101,64 @@ window.addEventListener("DOMContentLoaded", function () {
         return minDistance;
     }
 
-    // 검색 기능 (부분 검색 + 오타 허용)
+    // 추천 검색 결과를 표시하는 함수
+    function showSuggestions(suggestions) {
+        const suggestionBox = document.querySelector(".suggestion-box");
+        suggestionBox.innerHTML = ""; // 기존 추천 검색 결과 초기화
+
+        if (suggestions.length === 0) {
+            suggestionBox.style.display = "none"; // 추천 검색 결과가 없으면 숨김
+            return;
+        }
+
+        suggestions.forEach(item => {
+            const suggestionItem = document.createElement("div");
+            suggestionItem.classList.add("suggestion-item");
+            suggestionItem.textContent = item.name;
+            suggestionItem.addEventListener("click", function () {
+                iframe.src = item.src; // 추천 검색 결과 클릭 시 iframe src 변경
+                searchBox.value = ""; // 검색어 초기화
+                suggestionBox.style.display = "none"; // 추천 검색 결과 숨김
+            });
+            suggestionBox.appendChild(suggestionItem);
+        });
+
+        suggestionBox.style.display = "block"; // 추천 검색 결과 표시
+    }
+
+    // 검색 기능 (부분 검색 + 오타 허용 + 실시간 추천 검색)
     const searchBox = document.querySelector(".search-box input");
+    const suggestionBox = document.createElement("div");
+    suggestionBox.classList.add("suggestion-box");
+    document.querySelector(".search-box").appendChild(suggestionBox);
+
+    searchBox.addEventListener("input", function () {
+        const rawInput = searchBox.value.trim();
+        const searchTerm = rawInput.toLowerCase().replace(/[^a-z]/g, '');
+
+        if (!searchTerm) {
+            suggestionBox.style.display = "none"; // 검색어가 없으면 추천 검색 결과 숨김
+            return;
+        }
+
+        fetch("search.json")
+            .then(res => res.json())
+            .then(data => {
+                // 부분 검색 + 오타 허용
+                const results = data.map(item => ({
+                    ...item,
+                    score: partialLevenshteinDistance(searchTerm, item.name)
+                })).sort((a, b) => a.score - b.score);
+
+                const threshold = Math.max(3, Math.floor(searchTerm.length * 0.5)); // 더 유연한 임계값
+                const suggestions = results.filter(item => item.score <= threshold).slice(0, 5); // 상위 5개 추천 검색 결과
+
+                showSuggestions(suggestions); // 추천 검색 결과 표시
+            })
+            .catch(console.error);
+    });
+
+    // 검색어 입력 후 엔터 키 처리
     searchBox.addEventListener("keypress", function (event) {
         if (event.key === "Enter") {
             const rawInput = searchBox.value.trim();
@@ -113,7 +169,6 @@ window.addEventListener("DOMContentLoaded", function () {
             fetch("search.json")
                 .then(res => res.json())
                 .then(data => {
-                    // 부분 검색 + 오타 허용
                     const results = data.map(item => ({
                         ...item,
                         score: partialLevenshteinDistance(searchTerm, item.name)

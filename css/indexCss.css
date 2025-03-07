@@ -87,7 +87,6 @@ header {
     align-items: center;
 }
 
-
 nav {
     margin-left: 50px;
 }
@@ -122,6 +121,7 @@ footer {
     padding: 10px 15px;
     border-radius: 20px;
     width: 200px;
+    position: relative; /* 추천 검색 결과 박스 위치 기준 */
 }
 
 .search-box input {
@@ -135,6 +135,33 @@ footer {
 
 .search-box input::placeholder {
     color: #888;
+}
+
+/* 추천 검색 결과 박스 스타일 */
+.suggestion-box {
+    position: absolute;
+    top: 100%; /* search-box 아래에 위치 */
+    left: 0;
+    width: 100%;
+    background-color: #222;
+    border-radius: 0 0 20px 20px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none; /* 초기 상태는 숨김 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 추천 검색 결과 아이템 스타일 */
+.suggestion-item {
+    padding: 10px 15px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.suggestion-item:hover {
+    background-color: #333; /* 호버 시 배경색 변경 */
 }
 
 .DBN_nav {
@@ -162,6 +189,7 @@ footer {
     text-decoration-color: white;
     font-weight: bold;
 }
+
 /* 햄버거 메뉴 스타일 추가 */
 .hamburger {
     display: none; /* 기본적으로 숨김 */
@@ -201,7 +229,6 @@ footer {
     .active {
         text-decoration: none;
     }
-
 }
 
 @media (max-width: 1000px) {
