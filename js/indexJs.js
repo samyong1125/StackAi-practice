@@ -88,7 +88,7 @@ window.addEventListener("DOMContentLoaded", function () {
     const searchBox = document.querySelector(".search-box input");
     searchBox.addEventListener("keypress", function (event) {
         if (event.key === "Enter") {
-            const searchTerm = searchBox.value.trim().toLowerCase().replace(/[^a-z0-9]/g, ''); // 소문자로 변환하고 특수 기호 및 공백 제거
+            const searchTerm = searchBox.value.trim().toLowerCase().replace(/[^a-z]/g, ''); // 소문자로 변환하고 숫자, 특수 기호 및 공백 제거
             if (searchTerm) {
                 fetch("search.json")
                     .then(response => response.json())
