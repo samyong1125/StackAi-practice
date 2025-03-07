@@ -84,7 +84,7 @@ window.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // 검색 기능 추가
+    // 검색 기능 추가 (부분 일치 검색)
     const searchBox = document.querySelector(".search-box input");
     searchBox.addEventListener("keypress", function (event) {
         if (event.key === "Enter") {
@@ -93,7 +93,8 @@ window.addEventListener("DOMContentLoaded", function () {
                 fetch("search.json")
                     .then(response => response.json())
                     .then(data => {
-                        const foundItem = data.find(item => item.name === searchTerm);
+                        // 부분 일치 검색
+                        const foundItem = data.find(item => item.name.includes(searchTerm));
                         if (foundItem) {
                             iframe.src = foundItem.src;
                         } else {
