@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dc8b3ca-1d26-451c-9e3e-2688d47164eb" name="Changes" comment="" />
+    <list default="true" id="7dc8b3ca-1d26-451c-9e3e-2688d47164eb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/EpicGames.pptx 색수정본.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/EpicGames.pptx 색수정본.pptx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,7 +58,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-WS-243.24978.60" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-WS-243.25659.40" />
       </set>
     </attachedChunks>
   </component>
@@ -76,6 +78,7 @@
       <workItem from="1741153337170" duration="1376000" />
       <workItem from="1741154846373" duration="3088000" />
       <workItem from="1741237382221" duration="858000" />
+      <workItem from="1741306869995" duration="596000" />
     </task>
     <servers />
   </component>
