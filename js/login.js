@@ -25,10 +25,13 @@ logbtn.addEventListener("input", function () {
   }
 });
 
+let pwChecker =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+let idChecker =  /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
 logbtn.addEventListener("submit", function (e) {
   e.preventDefault();
-  if (id.value == "aa@naver.com") {
-    if (password.value == "1234") {
+  if (idChecker.test(id.value)) {
+    if (pwChecker.test(password.value)) {
       Swal.fire("로그인 성공", "로그인 되었습니다.", "success");
       setTimeout(function () {
         location.href = "index.html";

@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7dc8b3ca-1d26-451c-9e3e-2688d47164eb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/EpicGames.pptx 색수정본.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/EpicGames.pptx 색수정본.pptx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/login.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +80,7 @@
       <workItem from="1741154846373" duration="3088000" />
       <workItem from="1741237382221" duration="858000" />
       <workItem from="1741306869995" duration="596000" />
+      <workItem from="1741311523868" duration="869000" />
     </task>
     <servers />
   </component>
