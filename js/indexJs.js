@@ -16,7 +16,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
     // 햄버거 메뉴 클릭 이벤트 처리
     hamburger.addEventListener("click", function (event) {
-        event.stopPropagation(); // 이벤트 버블링 방지
+        event.stopPropagation();
         const DBNNav = document.querySelector(".DBN_nav");
         DBNNav.classList.toggle("active");
     });
@@ -24,10 +24,9 @@ window.addEventListener("DOMContentLoaded", function () {
     // 문서 전체 클릭 이벤트 처리
     document.addEventListener("click", function (event) {
         const DBNNav = document.querySelector(".DBN_nav");
-        const isClickInsideNav = DBNNav.contains(event.target); // 네비게이션 내부 클릭 여부
-        const isClickOnHamburger = hamburger.contains(event.target); // 햄버거 메뉴 클릭 여부
+        const isClickInsideNav = DBNNav.contains(event.target);
+        const isClickOnHamburger = hamburger.contains(event.target);
 
-        // 네비게이션 외부를 클릭했을 때 메뉴 닫기
         if (!isClickInsideNav && !isClickOnHamburger) {
             DBNNav.classList.remove("active");
         }
@@ -37,19 +36,16 @@ window.addEventListener("DOMContentLoaded", function () {
     iframe.addEventListener("load", function () {
         const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
 
-        // iframe 내 스크롤 이벤트 감지
         iframeDoc.addEventListener("scroll", function () {
             document.documentElement.scrollTop = iframeDoc.documentElement.scrollTop;
             document.body.scrollTop = iframeDoc.body.scrollTop;
         });
 
-        // iframe 내부 클릭 이벤트 감지
-        iframeDoc.addEventListener("click", function (event) {
+        iframeDoc.addEventListener("click", function () {
             const DBNNav = document.querySelector(".DBN_nav");
-            DBNNav.classList.remove("active"); // iframe 내부 클릭 시 메뉴 닫기
+            DBNNav.classList.remove("active");
         });
 
-        // 부모 페이지 스크롤 시 iframe도 동기화
         window.addEventListener("scroll", function () {
             iframeDoc.documentElement.scrollTop = document.documentElement.scrollTop;
             iframeDoc.body.scrollTop = document.body.scrollTop;
@@ -59,86 +55,105 @@ window.addEventListener("DOMContentLoaded", function () {
     // 네비게이션 클릭 이벤트 처리
     navLinks.forEach(link => {
         link.addEventListener("click", function (event) {
-            event.preventDefault(); // 기본 동작 방지
-
-            // 모든 링크에서 active 클래스 제거
+            event.preventDefault();
             navLinks.forEach(nav => nav.classList.remove("active"));
-
-            // 클릭한 링크에 active 클래스 추가
             this.classList.add("active");
 
-            // 클릭된 링크의 텍스트에 따라 iframe src 변경
-            let page = this.textContent.toLowerCase(); // "discover", "browse", "news"
-
-            if (page === 'discover' && window.innerWidth < 1100) {
-                page = 'discover1';
-            }
-
+            let page = this.textContent.toLowerCase();
+            if (page === 'discover' && window.innerWidth < 1100) page = 'discover1';
             iframe.src = `${page}.html`;
 
-            // 햄버거 메뉴 클릭 후 네비게이션 숨기기
             if (window.innerWidth <= 1099) {
-                const DBNNav = document.querySelector(".DBN_nav");
-                DBNNav.classList.remove("active");
+                document.querySelector(".DBN_nav").classList.remove("active");
             }
         });
     });
 
-    // 검색 기능 추가 (부분 일치 검색)
+    // 레벤슈타인 거리 계산 함수
+    function levenshteinDistance(a, b) {
+        const matrix = Array(b.length + 1).fill(null).map(() => Array(a.length + 1).fill(null));
+        for (let i = 0; i <= a.length; i++) matrix[0][i] = i;
+        for (let j = 0; j <= b.length; j++) matrix[j][0] = j;
+
+        for (let j = 1; j <= b.length; j++) {
+            for (let i = 1; i <= a.length; i++) {
+                const cost = a[i-1] === b[j-1] ? 0 : 1;
+                matrix[j][i] = Math.min(
+                    matrix[j][i-1] + 1,
+                    matrix[j-1][i] + 1,
+                    matrix[j-1][i-1] + cost
+                );
+            }
+        }
+        return matrix[b.length][a.length];
+    }
+
+    // 부분 문자열과의 레벤슈타인 거리 계산
+    function partialLevenshteinDistance(searchTerm, target) {
+        let minDistance = Infinity;
+        for (let i = 0; i <= target.length - searchTerm.length; i++) {
+            const substring = target.substring(i, i + searchTerm.length);
+            const distance = levenshteinDistance(searchTerm, substring);
+            if (distance < minDistance) {
+                minDistance = distance;
+            }
+        }
+        return minDistance;
+    }
+
+    // 검색 기능 (부분 검색 + 오타 허용)
     const searchBox = document.querySelector(".search-box input");
     searchBox.addEventListener("keypress", function (event) {
         if (event.key === "Enter") {
-            const searchTerm = searchBox.value.trim().toLowerCase().replace(/[^a-z]/g, ''); // 소문자로 변환하고 숫자, 특수 기호 및 공백 제거
-            if (searchTerm) {
-                fetch("search.json")
-                    .then(response => response.json())
-                    .then(data => {
-                        // 부분 일치 검색
-                        const foundItem = data.find(item => item.name.includes(searchTerm));
-                        if (foundItem) {
-                            iframe.src = foundItem.src;
-                        } else {
-                            alert("검색 결과가 없습니다.");
-                        }
-                    })
-                    .catch(error => console.error("Error fetching search data:", error));
-            }
+            const rawInput = searchBox.value.trim();
+            const searchTerm = rawInput.toLowerCase().replace(/[^a-z]/g, '');
+
+            if (!searchTerm) return;
+
+            fetch("search.json")
+                .then(res => res.json())
+                .then(data => {
+                    // 부분 검색 + 오타 허용
+                    const results = data.map(item => ({
+                        ...item,
+                        score: partialLevenshteinDistance(searchTerm, item.name)
+                    })).sort((a, b) => a.score - b.score);
+
+                    const bestMatch = results[0];
+                    const threshold = Math.max(3, Math.floor(searchTerm.length * 0.5)); // 더 유연한 임계값
+
+                    if (bestMatch.score <= threshold) {
+                        iframe.src = bestMatch.src;
+                    } else {
+                        alert(`'${rawInput}'에 대한 검색 결과가 없습니다.`);
+                    }
+                })
+                .catch(console.error);
         }
     });
 
+    // 반응형 처리
     window.addEventListener("resize", function () {
         const iframe = document.getElementById("myIframe");
+        const DBNNav = document.querySelector(".DBN_nav");
 
-        // 현재 iframe 의 src 가 discover.html 일 때만 동작
         if (iframe.src.includes("discover.html") && window.innerWidth < 1100) {
-            iframe.src = "discover1.html";  // 윈도우 크기가 1100px 미만일 때 src 변경
+            iframe.src = "discover1.html";
         } else if (iframe.src.includes("discover1.html") && window.innerWidth >= 1100) {
-            iframe.src = "discover.html";  // 윈도우 크기가 1100px 이상일 때 src 변경
+            iframe.src = "discover.html";
         }
 
-        // 화면 크기가 1099px 이상일 때 햄버거 메뉴 숨기기
-        if (window.innerWidth > 1099) {
-            const DBNNav = document.querySelector(".DBN_nav");
-            DBNNav.classList.remove("active");
-        }
+        if (window.innerWidth > 1099) DBNNav.classList.remove("active");
     });
 });
 
 function a() {
     const iframe = document.getElementById("myIframe");
-
-    // 현재 iframe 의 src 가 discover.html 일 때만 동작
     if (iframe.src.includes("discover.html") && window.innerWidth < 1100) {
-        iframe.src = "discover1.html";  // 윈도우 크기가 1100px 미만일 때 src 변경
+        iframe.src = "discover1.html";
     } else if (iframe.src.includes("discover1.html") && window.innerWidth >= 1100) {
-        iframe.src = "discover.html";  // 윈도우 크기가 1100px 이상일 때 src 변경
+        iframe.src = "discover.html";
     }
-
-    // 화면 크기가 1099px 이상일 때 햄버거 메뉴 숨기기
-    if (window.innerWidth > 1099) {
-        const DBNNav = document.querySelector(".DBN_nav");
-        DBNNav.classList.remove("active");
-    }
+    if (window.innerWidth > 1099) document.querySelector(".DBN_nav").classList.remove("active");
 }
-
 a();
