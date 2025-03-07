@@ -88,12 +88,12 @@ window.addEventListener("DOMContentLoaded", function () {
     const searchBox = document.querySelector(".search-box input");
     searchBox.addEventListener("keypress", function (event) {
         if (event.key === "Enter") {
-            const searchTerm = searchBox.value.trim();
+            const searchTerm = searchBox.value.trim().toLowerCase().replace(/[^a-z0-9]/g, ''); // 소문자로 변환하고 특수 기호 및 공백 제거
             if (searchTerm) {
                 fetch("search.json")
                     .then(response => response.json())
                     .then(data => {
-                        const foundItem = data.find(item => item.name.toLowerCase() === searchTerm.toLowerCase());
+                        const foundItem = data.find(item => item.name === searchTerm);
                         if (foundItem) {
                             iframe.src = foundItem.src;
                         } else {

@@ -1,23 +1,22 @@
 [
   {
-    "name": "Kingdom Come:Deliverance 2",
+    "name": "kingdomcomedeliverance2",
     "src": "asdf/kindomcom2.html"
   },
   {
-    "name": "Spider Man 2",
+    "name": "spiderman2",
     "src": "asdf/spiderman2.html"
   },
   {
-    "name": "Monster Hunter Wilds",
+    "name": "monsterhunterwilds",
     "src": "asdf/monhun_wilds.html"
   },
   {
-    "name": "Madden NFL 25",
+    "name": "maddennfl25",
     "src": "asdf/Madden NFL 25.html"
   },
   {
-    "name": "CIVILIZATION VII",
+    "name": "civilizationvii",
     "src": "asdf/Civilization.jpg"
   }
 ]
-
